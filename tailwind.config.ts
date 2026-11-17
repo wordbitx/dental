@@ -16,11 +16,11 @@ const config: Config = {
           soft: "#E8EDF5",
         },
         accent: {
-          DEFAULT: "#2563EB",
-          bright: "#3B82F6",
-          deep: "#1E40AF",
-          soft: "#DBEAFE",
-          "on-dark": "#7FB3FF",
+          DEFAULT: "#0EA5E9",
+          bright: "#38BDF8",
+          deep: "#0369A1",
+          soft: "#E0F2FE",
+          "on-dark": "#7DD3FC",
         },
         wa: {
           DEFAULT: "#25D366",
@@ -38,7 +38,7 @@ const config: Config = {
       boxShadow: {
         card: "0 10px 40px -12px rgba(10, 30, 60, 0.18)",
         lift: "0 24px 60px -20px rgba(10, 30, 60, 0.32)",
-        accent: "0 10px 30px -10px rgba(37, 99, 235, 0.45)",
+        accent: "0 10px 30px -10px rgba(14, 165, 233, 0.45)",
       },
     },
   },

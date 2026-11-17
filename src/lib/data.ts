@@ -153,7 +153,7 @@ export const TREATMENTS: Treatment[] = [
 
 export const PHOTOS = {
   // Hero: modern clinic interior, dental chair, no people (verified).
-  hero: "https://images.pexels.com/photos/4269277/pexels-photo-4269277.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  hero: "https://images.pexels.com/photos/6809642/pexels-photo-6809642.jpeg?auto=compress&cs=tinysrgb&w=1800",
   // Full clinic room, no people.
   heroAlt: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1400",
   clinic1: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1200",

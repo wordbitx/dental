@@ -5,8 +5,8 @@
 :root {
   --navy: #0a1e3c;
   --navy-deep: #050f1f;
-  --accent: #2563eb;
-  --accent-deep: #1e40af;
+  --accent: #0ea5e9;
+  --accent-deep: #0369a1;
 }
 
 html {
@@ -29,7 +29,7 @@ h3 {
 }
 
 ::selection {
-  background: #2563eb;
+  background: #0ea5e9;
   color: #ffffff;
 }
 
@@ -59,7 +59,7 @@ input[type="range"].ba-range::-webkit-slider-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #2563eb;
+  border: 2px solid #0ea5e9;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 input[type="range"].ba-range::-moz-range-thumb {
@@ -67,6 +67,6 @@ input[type="range"].ba-range::-moz-range-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #2563eb;
+  border: 2px solid #0ea5e9;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

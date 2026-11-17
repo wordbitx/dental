@@ -27,20 +27,20 @@ export default function HomePage() {
   return (
     <div>
       {/* ============ HERO — full-bleed clinic photo, content overlaid ============ */}
-      <section className="relative flex min-h-[720px] items-end overflow-hidden bg-navy-deep lg:h-[94vh]">
+      <section className="relative flex min-h-[600px] items-end overflow-hidden bg-navy-deep lg:h-[80vh]">
         <Image
           src={PHOTOS.hero}
-          alt="Inside a modern dental clinic — treatment chair and equipment"
+          alt="Inside a bright modern dental clinic — blue dental chair and equipment"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        {/* readability overlays */}
-        <div className="absolute inset-0 bg-navy-deep/45" />
-        <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent" />
+        {/* readability overlays — dark on the left where the text sits, clear on the right so the bright clinic shows */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/55 to-navy-deep/10" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy-deep/70 via-navy-deep/25 to-transparent" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-32 pt-28 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-28 pt-24 sm:px-6 lg:px-8">
           <Reveal>
             <a
               href={CLINIC.googleReviewsUrl}
@@ -50,10 +50,10 @@ export default function HomePage() {
             >
               <span className="text-accent-deep">★★★★★</span> {CLINIC.rating} · {CLINIC.reviews} Google reviews
             </a>
-            <h1 className="mt-5 max-w-3xl font-display text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-5 max-w-3xl font-display text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl">
               Strong, <span className="text-accent-on-dark">honest</span> dental care in Cantt, Lahore.
             </h1>
-            <p className="mt-4 max-w-2xl text-xl leading-relaxed text-white/90">
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
               Scaling, root canal, implants, braces and whitening — explained in plain words,
               booked in one WhatsApp message. No jargon, no pressure, no surprises.
             </p>
@@ -63,14 +63,14 @@ export default function HomePage() {
                 href={WA_BOOK}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2.5 rounded-xl bg-wa px-10 py-5 text-center text-xl font-bold text-white shadow-lift transition hover:bg-wa-dark"
+                className="flex items-center justify-center gap-2.5 rounded-xl bg-wa px-8 py-4 text-center text-lg font-bold text-white shadow-lift transition hover:bg-wa-dark"
               >
-                <ChatIcon className="h-6 w-6" />
+                <ChatIcon className="h-5 w-5" />
                 Book on WhatsApp
               </a>
               <a
                 href={CLINIC.phoneHref}
-                className="flex items-center justify-center gap-2.5 rounded-xl border-2 border-white/70 px-10 py-5 text-center text-xl font-bold text-white transition hover:border-white hover:bg-white/10"
+                className="flex items-center justify-center gap-2.5 rounded-xl border-2 border-white/70 px-8 py-4 text-center text-lg font-bold text-white transition hover:border-white hover:bg-white/10"
               >
                 <PhoneIcon className="h-5 w-5" />
                 Call {CLINIC.phoneDisplay}
