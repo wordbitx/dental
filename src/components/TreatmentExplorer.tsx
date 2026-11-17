@@ -63,7 +63,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
             className={`flex shrink-0 items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-all lg:w-full ${
               activeId === t.id
                 ? "border-navy bg-navy text-white shadow-card"
-                : "border-navy/15 bg-white text-navy hover:border-amber/60"
+                : "border-navy/15 bg-white text-navy hover:border-accent/60"
             }`}
           >
             <span
@@ -74,7 +74,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
               <TreatmentIcon id={t.id} className="h-5 w-5" />
             </span>
             <span>
-              <span className="block font-display text-base font-extrabold leading-snug">{t.name}</span>
+              <span className="block font-display text-base font-bold leading-snug">{t.name}</span>
               <span className={`block text-xs ${activeId === t.id ? "text-white/70" : "text-muted"}`}>
                 {t.duration}
               </span>
@@ -92,21 +92,21 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="rounded-2xl border border-navy/10 bg-white p-6 shadow-card sm:p-9"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-navy-soft px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-navy">
+          <span className="inline-flex items-center gap-2 rounded-full bg-navy-soft px-3 py-1 text-xs font-bold uppercase tracking-wider text-navy">
             <TreatmentIcon id={active.id} className="h-4 w-4" />
             Treatment
           </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl">{active.name}</h2>
-          <p className="mt-2 font-display text-lg italic text-amber-deep">{active.short}</p>
+          <h2 className="mt-4 font-display text-3xl font-bold text-navy sm:text-4xl">{active.name}</h2>
+          <p className="mt-2 font-display text-lg italic text-accent-deep">{active.short}</p>
           <p className="mt-4 leading-relaxed text-muted">{active.description}</p>
 
           <dl className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-amber-soft px-4 py-3">
-              <dt className="text-xs font-extrabold uppercase tracking-wider text-muted">Typical visit</dt>
+            <div className="rounded-2xl bg-accent-soft px-4 py-3">
+              <dt className="text-xs font-bold uppercase tracking-wider text-muted">Typical visit</dt>
               <dd className="mt-1 font-semibold text-navy">{active.duration}</dd>
             </div>
-            <div className="rounded-2xl bg-amber-soft px-4 py-3">
-              <dt className="text-xs font-extrabold uppercase tracking-wider text-muted">Best for</dt>
+            <div className="rounded-2xl bg-accent-soft px-4 py-3">
+              <dt className="text-xs font-bold uppercase tracking-wider text-muted">Best for</dt>
               <dd className="mt-1 font-semibold text-navy">{active.forWhom}</dd>
             </div>
           </dl>
@@ -123,7 +123,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/booking?service=${active.id}`}
-              className="rounded-xl bg-amber px-6 py-3 text-center text-sm font-extrabold text-navy-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-amber-bright"
+              className="rounded-xl bg-accent px-6 py-3 text-center text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
             >
               Book {active.name} →
             </Link>

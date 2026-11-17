@@ -18,7 +18,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-amber bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b-2 border-accent bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white">
@@ -31,10 +31,10 @@ export default function Header() {
             </svg>
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-lg font-black tracking-wide text-navy">
+            <span className="block font-display text-lg font-bold tracking-wide text-navy">
               THE DENTAL HOME
             </span>
-            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-amber-deep">
+            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-accent-deep">
               Cantt · Lahore
             </span>
           </span>
@@ -45,8 +45,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-bold transition-colors hover:text-amber-deep ${
-                pathname === item.href ? "text-amber-deep" : "text-ink"
+              className={`text-sm font-bold transition-colors hover:text-accent-deep ${
+                pathname === item.href ? "text-accent-deep" : "text-ink"
               }`}
             >
               {item.label}
@@ -57,7 +57,7 @@ export default function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={CLINIC.phoneHref}
-            className="text-sm font-extrabold text-navy hover:text-amber-deep"
+            className="text-sm font-bold text-navy hover:text-accent-deep"
           >
             {CLINIC.phoneDisplay}
           </a>
@@ -65,13 +65,13 @@ export default function Header() {
             href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
             target="_blank"
             rel="noreferrer"
-            className="rounded-xl bg-amber px-5 py-2.5 text-sm font-extrabold text-navy-deep shadow-amber transition hover:bg-amber-bright"
+            className="rounded-xl bg-wa px-5 py-2.5 text-sm font-bold text-white shadow-lift transition hover:bg-wa-dark"
           >
             WhatsApp us
           </a>
           <Link
             href="/booking"
-            className="rounded-xl bg-navy px-5 py-2.5 text-sm font-extrabold text-white shadow-card transition hover:bg-navy-deep"
+            className="rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white shadow-card transition hover:bg-navy-deep"
           >
             Book a visit
           </Link>
@@ -119,20 +119,20 @@ export default function Header() {
               href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 rounded-xl bg-amber px-5 py-3 text-center text-sm font-extrabold text-navy-deep shadow-amber"
+              className="mt-2 rounded-xl bg-wa px-5 py-3 text-center text-sm font-bold text-white shadow-lift"
             >
               WhatsApp us
             </a>
             <a
               href={CLINIC.phoneHref}
-              className="rounded-xl bg-navy px-5 py-3 text-center text-sm font-extrabold text-white"
+              className="rounded-xl bg-navy px-5 py-3 text-center text-sm font-bold text-white"
             >
               Call {CLINIC.phoneDisplay}
             </a>
             <Link
               href="/booking"
               onClick={() => setOpen(false)}
-              className="rounded-xl border-2 border-navy/25 px-5 py-3 text-center text-sm font-extrabold text-navy"
+              className="rounded-xl border-2 border-navy/25 px-5 py-3 text-center text-sm font-bold text-navy"
             >
               Book a visit
             </Link>

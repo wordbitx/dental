@@ -19,10 +19,10 @@ export default function Faq() {
               className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-7"
               aria-expanded={isOpen}
             >
-              <span className="font-display text-lg font-extrabold text-navy">{item.q}</span>
+              <span className="font-display text-lg font-bold text-navy">{item.q}</span>
               <span
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all ${
-                  isOpen ? "rotate-45 border-amber bg-amber text-navy-deep" : "border-navy/25 text-navy"
+                  isOpen ? "rotate-45 border-accent bg-accent text-white" : "border-navy/25 text-navy"
                 }`}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">

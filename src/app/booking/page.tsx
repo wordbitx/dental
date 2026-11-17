@@ -16,8 +16,8 @@ export default function BookingPage() {
       <section className="bg-navy-deep text-white">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-bright">Booking</p>
-            <h1 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-on-dark">Booking</p>
+            <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
               Book your visit.
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-white/80">
@@ -26,7 +26,7 @@ export default function BookingPage() {
             </p>
             <p className="mt-3 text-sm text-white/70">
               Prefer to talk first? Call{" "}
-              <a href={CLINIC.phoneHref} className="font-semibold text-amber-bright underline underline-offset-4">
+              <a href={CLINIC.phoneHref} className="font-semibold text-accent-on-dark underline underline-offset-4">
                 {CLINIC.phoneDisplay}
               </a>
               {" "}or{" "}
@@ -34,7 +34,7 @@ export default function BookingPage() {
                 href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-amber-bright underline underline-offset-4"
+                className="font-semibold text-accent-on-dark underline underline-offset-4"
               >
                 message us on WhatsApp
               </a>
@@ -46,7 +46,7 @@ export default function BookingPage() {
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <Reveal delay={0.1}>
-          <div className="rounded-2xl border-2 border-navy/10 border-t-4 border-t-amber bg-white p-6 shadow-card sm:p-9">
+          <div className="rounded-2xl border-2 border-navy/10 border-t-4 border-t-accent bg-white p-6 shadow-card sm:p-9">
             <Suspense
               fallback={
                 <p className="py-10 text-center text-muted">Loading the booking form…</p>
