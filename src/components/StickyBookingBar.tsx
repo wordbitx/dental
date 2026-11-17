@@ -9,10 +9,10 @@ export default function StickyBookingBar() {
   if (pathname === "/booking" || pathname === "/admin") return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-accent bg-navy-deep">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-peach bg-teal-deep">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="min-w-0">
-          <p className="truncate text-sm font-bold text-accent-on-dark">
+          <p className="truncate text-sm font-bold text-peach-on-dark">
             ★ {CLINIC.rating} · {CLINIC.reviews} Google reviews
           </p>
           <p className="hidden truncate text-xs font-medium text-white/70 sm:block">

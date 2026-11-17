@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 
+// ALBA reference palette — exactly three colors:
+// ICE WHITE #F4F8FA · DEEP TEAL #0F3D47 · SOFT PEACH #F59E7B
+// (+ WhatsApp brand green, functional only)
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,36 +13,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0A1E3C",
-          deep: "#050F1F",
-          mid: "#16305A",
-          soft: "#E8EDF5",
+        teal: {
+          DEFAULT: "#0F3D47",
+          deep: "#0A2E36",
+          mid: "#17525F",
+          soft: "#DCE9EC",
         },
-        accent: {
-          DEFAULT: "#0EA5E9",
-          bright: "#38BDF8",
-          deep: "#0369A1",
-          soft: "#E0F2FE",
-          "on-dark": "#7DD3FC",
+        peach: {
+          DEFAULT: "#F59E7B",
+          bright: "#F7B193",
+          deep: "#D97E5C",
+          soft: "#FDE9E0",
+          "on-dark": "#F9C4AC",
+        },
+        ice: {
+          DEFAULT: "#F4F8FA",
+          deep: "#E9F1F4",
         },
         wa: {
           DEFAULT: "#25D366",
           dark: "#1DA851",
         },
-        ink: "#101828",
-        muted: "#475569",
-        paper: "#FFFFFF",
-        mist: "#F4F7FB",
+        ink: "#0F3D47",
+        muted: "#5A7280",
       },
       fontFamily: {
         display: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 10px 40px -12px rgba(10, 30, 60, 0.18)",
-        lift: "0 24px 60px -20px rgba(10, 30, 60, 0.32)",
-        accent: "0 10px 30px -10px rgba(14, 165, 233, 0.45)",
+        card: "0 10px 40px -12px rgba(15, 61, 71, 0.14)",
+        lift: "0 24px 60px -20px rgba(15, 61, 71, 0.28)",
+        peach: "0 10px 30px -10px rgba(245, 158, 123, 0.45)",
       },
     },
   },

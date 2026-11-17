@@ -14,8 +14,8 @@ function fmtDate(iso: string) {
 }
 
 const STATUS_STYLE: Record<Appointment["status"], string> = {
-  Pending: "bg-accent-soft text-accent-deep",
-  Confirmed: "bg-navy-soft text-navy",
+  Pending: "bg-peach-soft text-teal",
+  Confirmed: "bg-teal-soft text-teal",
   Cancelled: "bg-red-50 text-red-700",
 };
 
@@ -48,8 +48,8 @@ export default function AdminPage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">Admin dashboard</p>
-          <h1 className="mt-3 font-display text-4xl font-bold text-navy sm:text-5xl">Appointments</h1>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">Admin dashboard</p>
+          <h1 className="mt-3 font-display text-4xl font-bold text-teal sm:text-5xl">Appointments</h1>
           <p className="mt-3 max-w-xl leading-relaxed text-muted">
             Bookings made through the website appear here. They are stored in this browser only
             (demo — no backend). Confirm or cancel each request, then confirm the slot with the
@@ -58,7 +58,7 @@ export default function AdminPage() {
         </div>
         <Link
           href="/booking"
-          className="rounded-xl bg-accent px-6 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
+          className="rounded-xl bg-peach px-6 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-peach-deep"
         >
           Go to Booking →
         </Link>
@@ -72,32 +72,32 @@ export default function AdminPage() {
           { label: "Upcoming", value: stats.upcoming },
           { label: "Awaiting confirmation", value: stats.pending },
         ].map((s) => (
-          <div key={s.label} className="rounded-2xl border-2 border-navy/10 border-t-4 border-t-accent bg-white p-6 shadow-card">
-            <p className="font-display text-4xl font-bold text-navy">{loaded ? s.value : "—"}</p>
+          <div key={s.label} className="rounded-2xl border-2 border-teal/10 border-t-4 border-t-peach bg-white p-6 shadow-card">
+            <p className="font-display text-4xl font-bold text-teal">{loaded ? s.value : "—"}</p>
             <p className="mt-1 text-sm text-muted">{s.label}</p>
           </div>
         ))}
       </div>
 
       {/* Table */}
-      <div className="mt-8 overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-card">
+      <div className="mt-8 overflow-hidden rounded-2xl border border-teal/10 bg-white shadow-card">
         {!loaded ? (
           <p className="p-10 text-center text-muted">Loading appointments…</p>
         ) : appointments.length === 0 ? (
           <div className="p-10 text-center sm:p-14">
-            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-navy-soft text-navy">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-soft text-teal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-7 w-7">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v4m8-4v4M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
               </svg>
             </span>
-            <h2 className="mt-4 font-display text-2xl font-bold text-navy">No appointments yet</h2>
+            <h2 className="mt-4 font-display text-2xl font-bold text-teal">No appointments yet</h2>
             <p className="mx-auto mt-2 max-w-md text-muted">
               Bookings made here will appear. Nothing is seeded — only real bookings from the
               booking flow show up.
             </p>
             <Link
               href="/booking"
-              className="mt-6 inline-block rounded-xl bg-accent px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-accent-deep"
+              className="mt-6 inline-block rounded-xl bg-peach px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-peach-deep"
             >
               Make a test booking →
             </Link>
@@ -106,7 +106,7 @@ export default function AdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-left text-sm">
               <thead>
-                <tr className="border-b border-navy/10 bg-accent-soft text-xs uppercase tracking-wider text-muted">
+                <tr className="border-b border-teal/10 bg-peach-soft text-xs uppercase tracking-wider text-muted">
                   <th className="px-5 py-4 font-semibold">Patient</th>
                   <th className="px-5 py-4 font-semibold">Phone</th>
                   <th className="px-5 py-4 font-semibold">Treatment</th>
@@ -116,12 +116,12 @@ export default function AdminPage() {
                   <th className="px-5 py-4 font-semibold">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-navy/10">
+              <tbody className="divide-y divide-teal/10">
                 {appointments.map((a) => (
                   <tr key={a.id} className="align-top">
-                    <td className="px-5 py-4 font-semibold text-navy">{a.name}</td>
+                    <td className="px-5 py-4 font-semibold text-teal">{a.name}</td>
                     <td className="px-5 py-4">
-                      <a href={`tel:${a.phone.replace(/[^0-9+]/g, "")}`} className="text-navy underline underline-offset-2">
+                      <a href={`tel:${a.phone.replace(/[^0-9+]/g, "")}`} className="text-teal underline underline-offset-2">
                         {a.phone}
                       </a>
                     </td>
@@ -139,7 +139,7 @@ export default function AdminPage() {
                           <button
                             type="button"
                             onClick={() => updateStatus(a.id, "Confirmed")}
-                            className="rounded-xl bg-navy px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-navy-deep"
+                            className="rounded-xl bg-teal px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-teal-deep"
                           >
                             Confirm
                           </button>
@@ -157,7 +157,7 @@ export default function AdminPage() {
                           <button
                             type="button"
                             onClick={() => updateStatus(a.id, "Pending")}
-                            className="rounded-full border border-navy/25 px-3.5 py-1.5 text-xs font-semibold text-navy transition hover:border-navy"
+                            className="rounded-full border border-teal/25 px-3.5 py-1.5 text-xs font-semibold text-teal transition hover:border-teal"
                           >
                             Reopen
                           </button>
@@ -174,7 +174,7 @@ export default function AdminPage() {
 
       <p className="mt-4 text-xs text-muted">
         Demo only — appointments live in this browser&apos;s localStorage (key{" "}
-        <code className="rounded bg-navy-soft px-1.5 py-0.5 text-navy">tdh-appointments</code>) and are not
+        <code className="rounded bg-teal-soft px-1.5 py-0.5 text-teal">tdh-appointments</code>) and are not
         sent anywhere.
       </p>
     </div>

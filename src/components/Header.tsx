@@ -18,10 +18,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-accent bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-teal/10 bg-ice/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-teal text-white">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
               <path
                 strokeLinecap="round"
@@ -31,10 +31,10 @@ export default function Header() {
             </svg>
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-lg font-bold tracking-wide text-navy">
+            <span className="block font-display text-lg font-bold tracking-wide text-teal">
               THE DENTAL HOME
             </span>
-            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-accent-deep">
+            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-teal">
               Cantt · Lahore
             </span>
           </span>
@@ -45,8 +45,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-bold transition-colors hover:text-accent-deep ${
-                pathname === item.href ? "text-accent-deep" : "text-ink"
+              className={`text-sm font-bold transition-colors hover:text-teal ${
+                pathname === item.href ? "text-teal" : "text-ink"
               }`}
             >
               {item.label}
@@ -54,10 +54,10 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={CLINIC.phoneHref}
-            className="text-sm font-bold text-navy hover:text-accent-deep"
+            className="text-sm font-semibold text-teal hover:text-peach-deep"
           >
             {CLINIC.phoneDisplay}
           </a>
@@ -65,23 +65,17 @@ export default function Header() {
             href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
             target="_blank"
             rel="noreferrer"
-            className="rounded-xl bg-wa px-5 py-2.5 text-sm font-bold text-white shadow-lift transition hover:bg-wa-dark"
+            className="rounded-full bg-peach px-6 py-2.5 text-sm font-bold text-white shadow-peach transition hover:bg-peach-deep"
           >
-            WhatsApp us
+            Book on WhatsApp
           </a>
-          <Link
-            href="/booking"
-            className="rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white shadow-card transition hover:bg-navy-deep"
-          >
-            Book a visit
-          </Link>
         </div>
 
         <button
           type="button"
           aria-label="Menu"
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-navy/20 text-navy lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-teal/20 text-teal lg:hidden"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
             {open ? (
@@ -94,7 +88,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-navy/10 bg-white px-4 pb-5 pt-3 lg:hidden">
+        <nav className="border-t border-teal/10 bg-ice px-4 pb-5 pt-3 lg:hidden">
           <div className="flex flex-col gap-1">
             {NAV.map((item) => (
               <Link
@@ -102,7 +96,7 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`rounded-lg px-3 py-2.5 text-base font-bold ${
-                  pathname === item.href ? "bg-navy-soft text-navy" : "text-ink"
+                  pathname === item.href ? "bg-teal-soft text-teal" : "text-ink"
                 }`}
               >
                 {item.label}
@@ -119,23 +113,16 @@ export default function Header() {
               href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 rounded-xl bg-wa px-5 py-3 text-center text-sm font-bold text-white shadow-lift"
+              className="mt-2 rounded-full bg-peach px-5 py-3 text-center text-sm font-bold text-white shadow-peach"
             >
-              WhatsApp us
+              Book on WhatsApp
             </a>
             <a
               href={CLINIC.phoneHref}
-              className="rounded-xl bg-navy px-5 py-3 text-center text-sm font-bold text-white"
+              className="rounded-full bg-teal px-5 py-3 text-center text-sm font-bold text-white"
             >
               Call {CLINIC.phoneDisplay}
             </a>
-            <Link
-              href="/booking"
-              onClick={() => setOpen(false)}
-              className="rounded-xl border-2 border-navy/25 px-5 py-3 text-center text-sm font-bold text-navy"
-            >
-              Book a visit
-            </Link>
           </div>
         </nav>
       )}

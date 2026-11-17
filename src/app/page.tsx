@@ -26,70 +26,75 @@ const WA_BOOK = `${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HO
 export default function HomePage() {
   return (
     <div>
-      {/* ============ HERO — full-bleed clinic photo, content overlaid ============ */}
-      <section className="relative flex min-h-[600px] items-end overflow-hidden bg-navy-deep lg:h-[80vh]">
-        <Image
-          src={PHOTOS.hero}
-          alt="Inside a bright modern dental clinic — blue dental chair and equipment"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* readability overlays — dark on the left where the text sits, clear on the right so the bright clinic shows */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/55 to-navy-deep/10" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-navy-deep/70 via-navy-deep/25 to-transparent" />
-
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-28 pt-24 sm:px-6 lg:px-8">
+      {/* ============ HERO — ALBA split model: text left, clinic photo right ============ */}
+      <section className="bg-ice">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-20">
           <Reveal>
             <a
               href={CLINIC.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-navy shadow-lift transition hover:bg-accent-soft"
+              className="inline-flex items-center gap-2 rounded-full border border-teal/10 bg-white px-4 py-2 text-sm font-semibold text-teal shadow-card transition hover:border-peach"
             >
-              <span className="text-accent-deep">★★★★★</span> {CLINIC.rating} · {CLINIC.reviews} Google reviews
+              <span className="text-peach">★★★★★</span> {CLINIC.rating} · {CLINIC.reviews} Google reviews
             </a>
-            <h1 className="mt-5 max-w-3xl font-display text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl">
-              Strong, <span className="text-accent-on-dark">honest</span> dental care in Cantt, Lahore.
+            <h1 className="mt-6 max-w-xl font-display text-5xl font-semibold leading-[1.08] tracking-[-0.02em] text-teal sm:text-6xl">
+              Smile with confidence.
             </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
-              Scaling, root canal, implants, braces and whitening — explained in plain words,
-              booked in one WhatsApp message. No jargon, no pressure, no surprises.
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">
+              We look after your smile from your very first visit — scaling, root canal,
+              implants, braces and whitening, explained in plain words.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href={WA_BOOK}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2.5 rounded-xl bg-wa px-8 py-4 text-center text-lg font-bold text-white shadow-lift transition hover:bg-wa-dark"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-peach px-8 py-4 text-center text-base font-bold text-white shadow-peach transition hover:bg-peach-deep"
               >
                 <ChatIcon className="h-5 w-5" />
                 Book on WhatsApp
               </a>
               <a
                 href={CLINIC.phoneHref}
-                className="flex items-center justify-center gap-2.5 rounded-xl border-2 border-white/70 px-8 py-4 text-center text-lg font-bold text-white transition hover:border-white hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 text-base font-semibold text-teal transition hover:text-peach-deep"
               >
                 <PhoneIcon className="h-5 w-5" />
                 Call {CLINIC.phoneDisplay}
               </a>
             </div>
 
-            <p className="mt-6 text-sm font-semibold text-white/85">
+            <p className="mt-8 text-sm font-medium leading-relaxed text-muted">
               📍 {CLINIC.addressShort} — Ground Floor, Al Rehman Shopping Plaza, Opposite HBL
               Cantt Branch, Saddar Bazar, Dhaka Road, Cantt, Lahore
             </p>
-            <p className="mt-1 text-sm font-medium text-white/70">
+            <p className="mt-1 text-sm text-muted">
               Timings are confirmed on WhatsApp — message us to confirm.
             </p>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <div className="relative">
+              <div className="absolute -bottom-4 -right-4 h-full w-full rounded-[2rem] bg-peach-soft" aria-hidden="true" />
+              <div className="relative overflow-hidden rounded-[2rem] shadow-lift">
+                <Image
+                  src={PHOTOS.hero}
+                  alt="Inside a bright modern dental clinic — blue dental chair and white cabinets"
+                  width={1400}
+                  height={1050}
+                  priority
+                  className="aspect-[4/3] w-full object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
 
       {/* ============ FACT CARDS — overlapping the hero ============ */}
-      <section className="relative z-10 mx-auto -mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
           {[
             { big: `★ ${CLINIC.rating}`, small: "Google rating" },
@@ -98,8 +103,8 @@ export default function HomePage() {
             { big: "WhatsApp", small: "Fastest way to book" },
           ].map((s, i) => (
             <Reveal key={s.small} delay={i * 0.06}>
-              <div className="h-full rounded-2xl border-t-4 border-accent bg-white p-5 shadow-lift">
-                <p className="font-display text-3xl font-bold tracking-[-0.02em] text-navy sm:text-4xl">{s.big}</p>
+              <div className="h-full rounded-2xl border-t-4 border-peach bg-white p-5 shadow-lift">
+                <p className="font-display text-3xl font-bold tracking-[-0.02em] text-teal sm:text-4xl">{s.big}</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-wider text-muted">{s.small}</p>
               </div>
             </Reveal>
@@ -112,14 +117,14 @@ export default function HomePage() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">Treatments</p>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.02em] text-navy sm:text-4xl lg:text-[2.6rem]">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">Treatments</p>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.02em] text-teal sm:text-4xl lg:text-[2.6rem]">
                 What we treat — pick a treatment to see the details.
               </h2>
             </div>
             <Link
               href="/treatments"
-              className="rounded-xl bg-navy px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-navy-deep"
+              className="rounded-xl bg-teal px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-teal-deep"
             >
               View all treatments →
             </Link>
@@ -131,7 +136,7 @@ export default function HomePage() {
             <Reveal key={t.id} delay={(i % 4) * 0.06}>
               <Link
                 href={`/treatments?id=${t.id}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-lift"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-teal/10 bg-white shadow-card transition-all hover:-translate-y-1 hover:shadow-lift"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -141,14 +146,14 @@ export default function HomePage() {
                     height={900}
                     className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-navy/85 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                  <span className="absolute left-3 top-3 rounded-full bg-teal/85 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                     {t.duration}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display text-xl font-bold leading-snug tracking-[-0.02em] text-navy">{t.name}</h3>
+                  <h3 className="font-display text-xl font-bold leading-snug tracking-[-0.02em] text-teal">{t.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{t.short}</p>
-                  <span className="mt-4 text-sm font-bold text-accent-deep">
+                  <span className="mt-4 text-sm font-bold text-teal">
                     Learn more →
                   </span>
                 </div>
@@ -158,16 +163,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ BEFORE / AFTER — dark navy band, slider left ============ */}
-      <section className="bg-navy-deep py-14 text-white lg:py-20">
+      {/* ============ BEFORE / AFTER — dark teal band, slider left ============ */}
+      <section className="bg-teal-deep py-14 text-white lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <Reveal>
             <BeforeAfterSlider />
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-on-dark">The difference</p>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-peach-on-dark">The difference</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.02em] sm:text-4xl">
-              Small changes, <span className="text-accent-on-dark">visible</span> results.
+              Small changes, <span className="text-peach-on-dark">visible</span> results.
             </h2>
             <p className="mt-4 max-w-lg leading-relaxed text-white/80">
               Whitening, alignment and restorative work add up quietly — a cleaner smile, an
@@ -181,7 +186,7 @@ export default function HomePage() {
                 "Aftercare advice so the result lasts",
               ].map((line) => (
                 <li key={line} className="flex items-start gap-2.5 font-medium text-white/90">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-[11px] font-bold text-white">✓</span>
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-peach text-[11px] font-bold text-white">✓</span>
                   <span>{line}</span>
                 </li>
               ))}
@@ -200,11 +205,11 @@ export default function HomePage() {
       </section>
 
       {/* ============ HOW BOOKING WORKS — 3 steps ============ */}
-      <section className="bg-mist py-12 lg:py-16">
+      <section className="bg-ice-deep py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">How it works</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-navy sm:text-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">How it works</p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-teal sm:text-4xl">
               Booked in three steps.
             </h2>
           </Reveal>
@@ -228,13 +233,13 @@ export default function HomePage() {
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="relative h-full overflow-hidden rounded-2xl bg-white p-6 shadow-card">
-                  <span className="absolute -right-2 -top-5 font-display text-[6rem] font-bold leading-none text-navy-soft">
+                  <span className="absolute -right-2 -top-5 font-display text-[6rem] font-bold leading-none text-teal-soft">
                     {s.n}
                   </span>
-                  <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-accent font-display text-lg font-bold text-white">
+                  <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-peach font-display text-lg font-bold text-white">
                     {s.n}
                   </span>
-                  <h3 className="relative mt-4 font-display text-xl font-bold tracking-[-0.02em] text-navy">{s.title}</h3>
+                  <h3 className="relative mt-4 font-display text-xl font-bold tracking-[-0.02em] text-teal">{s.title}</h3>
                   <p className="relative mt-2 leading-relaxed text-muted">{s.body}</p>
                 </div>
               </Reveal>
@@ -246,8 +251,8 @@ export default function HomePage() {
       {/* ============ WHY US ============ */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">Why patients choose us</p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-navy sm:text-4xl">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">Why patients choose us</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-teal sm:text-4xl">
             Dentistry that treats you like a person, not a number.
           </h2>
         </Reveal>
@@ -267,9 +272,9 @@ export default function HomePage() {
             },
           ].map((c, i) => (
             <Reveal key={c.title} delay={i * 0.08}>
-              <div className="h-full rounded-2xl border-t-4 border-accent bg-white p-6 shadow-card">
-                <span className="font-display text-4xl font-bold text-accent">0{i + 1}</span>
-                <h3 className="mt-3 font-display text-xl font-bold tracking-[-0.02em] text-navy">{c.title}</h3>
+              <div className="h-full rounded-2xl border-t-4 border-peach bg-white p-6 shadow-card">
+                <span className="font-display text-4xl font-bold text-peach">0{i + 1}</span>
+                <h3 className="mt-3 font-display text-xl font-bold tracking-[-0.02em] text-teal">{c.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{c.body}</p>
               </div>
             </Reveal>
@@ -278,7 +283,7 @@ export default function HomePage() {
       </section>
 
       {/* ============ REVIEWS BAND ============ */}
-      <section className="bg-accent py-12 lg:py-14">
+      <section className="bg-teal py-12 lg:py-14">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <Reveal>
             <p className="font-display text-5xl font-bold tracking-[-0.02em] text-white sm:text-6xl">
@@ -293,7 +298,7 @@ export default function HomePage() {
               href={CLINIC.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-block rounded-xl bg-white px-7 py-4 text-base font-bold text-navy shadow-lift transition hover:bg-white/90"
+              className="inline-block rounded-xl bg-white px-7 py-4 text-base font-bold text-teal shadow-lift transition hover:bg-white/90"
             >
               Read them on Google →
             </a>
@@ -311,12 +316,12 @@ export default function HomePage() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-navy-deep/25" />
+          <div className="absolute inset-0 bg-teal-deep/25" />
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="relative z-10 -mt-24 max-w-xl rounded-2xl bg-white p-7 shadow-lift sm:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">Visit us</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-navy">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">Visit us</p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-teal">
               Come and see the clinic.
             </h2>
             <p className="mt-3 leading-relaxed text-muted">{CLINIC.address}</p>
@@ -327,7 +332,7 @@ export default function HomePage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/booking"
-                className="rounded-xl bg-accent px-6 py-3 text-center text-sm font-bold text-white shadow-accent transition hover:bg-accent-deep"
+                className="rounded-xl bg-peach px-6 py-3 text-center text-sm font-bold text-white shadow-peach transition hover:bg-peach-deep"
               >
                 Book a visit →
               </Link>
@@ -335,7 +340,7 @@ export default function HomePage() {
                 href={CLINIC.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border-2 border-navy/25 px-6 py-3 text-center text-sm font-bold text-navy transition hover:border-navy"
+                className="rounded-xl border-2 border-teal/25 px-6 py-3 text-center text-sm font-bold text-teal transition hover:border-teal"
               >
                 Get directions
               </a>
@@ -348,8 +353,8 @@ export default function HomePage() {
       {/* ============ FAQ ============ */}
       <section className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent-deep">Questions</p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-navy sm:text-4xl">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">Questions</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.02em] text-teal sm:text-4xl">
             Before you visit
           </h2>
           <p className="mt-3 leading-relaxed text-muted">The things patients usually ask us first.</p>
