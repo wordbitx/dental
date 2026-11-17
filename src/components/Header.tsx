@@ -18,11 +18,11 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-teal/10 bg-ice/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-teal/10 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-teal text-white">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -31,44 +31,40 @@ export default function Header() {
             </svg>
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-lg font-bold tracking-wide text-teal">
+            <span className="block font-display text-lg font-extrabold tracking-wide text-teal">
               THE DENTAL HOME
             </span>
-            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-teal">
-              Cantt · Lahore
+            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-muted">
+              Dental Clinic · Cantt, Lahore
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-bold transition-colors hover:text-teal ${
-                pathname === item.href ? "text-teal" : "text-ink"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {NAV.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-full px-4 py-2 text-sm font-bold transition-colors ${
+                  active ? "bg-teal text-white shadow-card" : "text-ink hover:bg-teal-soft hover:text-teal"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href={CLINIC.phoneHref}
-            className="text-sm font-semibold text-teal hover:text-peach-deep"
+        <div className="hidden lg:block">
+          <Link
+            href="/booking"
+            className="inline-flex items-center gap-2 rounded-full bg-lav px-6 py-2.5 text-sm font-bold text-white shadow-lav transition hover:bg-lav-deep"
           >
-            {CLINIC.phoneDisplay}
-          </a>
-          <a
-            href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-peach px-6 py-2.5 text-sm font-bold text-white shadow-peach transition hover:bg-peach-deep"
-          >
-            Book on WhatsApp
-          </a>
+            Book Appointment →
+          </Link>
         </div>
 
         <button
@@ -88,38 +84,49 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-teal/10 bg-ice px-4 pb-5 pt-3 lg:hidden">
+        <nav className="border-t border-teal/10 bg-white px-4 pb-5 pt-3 lg:hidden">
           <div className="flex flex-col gap-1">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={`rounded-lg px-3 py-2.5 text-base font-bold ${
-                  pathname === item.href ? "bg-teal-soft text-teal" : "text-ink"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-full px-4 py-2.5 text-base font-bold ${
+                    active ? "bg-teal text-white" : "text-ink hover:bg-teal-soft"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
               href="/admin"
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-base font-bold text-muted"
+              className="rounded-full px-4 py-2.5 text-base font-bold text-muted"
             >
               Admin dashboard
+            </Link>
+            <Link
+              href="/booking"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-lav px-5 py-3 text-center text-sm font-bold text-white shadow-lav"
+            >
+              Book Appointment →
             </Link>
             <a
               href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 rounded-full bg-peach px-5 py-3 text-center text-sm font-bold text-white shadow-peach"
+              className="mt-2 rounded-full bg-teal px-5 py-3 text-center text-sm font-bold text-white"
             >
               Book on WhatsApp
             </a>
             <a
               href={CLINIC.phoneHref}
-              className="rounded-full bg-teal px-5 py-3 text-center text-sm font-bold text-white"
+              className="mt-2 text-center text-sm font-semibold text-teal"
             >
               Call {CLINIC.phoneDisplay}
             </a>

@@ -3,20 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --teal: #0f3d47;
-  --teal-deep: #0a2e36;
-  --peach: #f59e7b;
-  --peach-deep: #d97e5c;
-  --ice: #f4f8fa;
+  --teal: #0b4f5c;
+  --teal-deep: #083b45;
+  --lav: #8b5cf6;
+  --lav-deep: #7c3aed;
+  --ice: #f0f7f7;
+  --scrollbar-thumb: #0b4f5c;
+  --scrollbar-track: #e2efef;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Standard scrollbar (modern-web-guidance: customize-scrollbar-color-and-thickness) */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
 }
 
 body {
-  background-color: #f4f8fa;
-  color: #0f3d47;
+  background-color: #f0f7f7;
+  color: #0b4f5c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -30,20 +35,25 @@ h3 {
 }
 
 ::selection {
-  background: #f59e7b;
-  color: #0f3d47;
+  background: #8b5cf6;
+  color: #0b4f5c;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #e9f1f4;
-}
-::-webkit-scrollbar-thumb {
-  background: #0f3d47;
-  border-radius: 8px;
+/* Scrollbar — legacy fallback only for browsers without scrollbar-color */
+@supports not (scrollbar-color: auto) {
+  html {
+    scrollbar-width: auto;
+  }
+  html::-webkit-scrollbar {
+    width: 10px;
+  }
+  html::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  html::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 8px;
+  }
 }
 
 /* Range slider (before/after) */
@@ -60,7 +70,7 @@ input[type="range"].ba-range::-webkit-slider-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #f59e7b;
+  border: 2px solid #8b5cf6;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 input[type="range"].ba-range::-moz-range-thumb {
@@ -68,6 +78,6 @@ input[type="range"].ba-range::-moz-range-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #f59e7b;
+  border: 2px solid #8b5cf6;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

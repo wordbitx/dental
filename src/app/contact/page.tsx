@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="bg-teal-deep text-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-peach-on-dark">Contact</p>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-lav-on-dark">Contact</p>
             <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
               Talk to us.
             </h1>
@@ -38,10 +38,10 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="rounded-2xl bg-teal p-6 shadow-lift transition-all hover:-translate-y-1"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-peach-on-dark">WhatsApp — fastest way</p>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-lav-on-dark">WhatsApp — fastest way</p>
                 <p className="mt-2 font-display text-2xl font-bold text-white">{CLINIC.phoneDisplay}</p>
                 <p className="mt-1 text-white/75">Fastest way to reach us — bookings, questions, pain.</p>
-                <span className="mt-3 inline-block text-sm font-bold text-peach-on-dark">Message on WhatsApp →</span>
+                <span className="mt-3 inline-block text-sm font-bold text-lav-on-dark">Message on WhatsApp →</span>
               </a>
 
               <a
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <span className="mt-3 inline-block text-sm font-semibold text-teal">Call now →</span>
               </a>
 
-              <div className="rounded-2xl bg-peach-soft p-6 shadow-card">
+              <div className="rounded-2xl bg-lav-soft p-6 shadow-card">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal">Timings</p>
                 <p className="mt-2 leading-relaxed text-muted">
                   Timings are confirmed on WhatsApp — message us to confirm before you visit.
@@ -65,7 +65,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.1}>
             <div className="flex h-full flex-col rounded-2xl bg-teal-deep p-7 text-white shadow-lift sm:p-9">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-peach-on-dark">Visit the clinic</p>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-lav-on-dark">Visit the clinic</p>
               <p className="mt-3 font-display text-2xl font-bold leading-snug">{CLINIC.address}</p>
               <p className="mt-4 leading-relaxed text-white/75">
                 We are on the ground floor of Al Rehman Shopping Plaza, opposite the HBL Cantt
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 href={CLINIC.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-block rounded-xl bg-peach px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-peach-deep"
+                className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-lav-deep"
               >
                 Open in Google Maps →
               </a>
