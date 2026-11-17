@@ -153,12 +153,18 @@ export const TREATMENTS: Treatment[] = [
 
 export const PHOTOS = {
   // Hero: woman smiling in a dental chair, dentist in a teal gown beside her
-  // (Pexels 6627476, Kaboompics — visually verified; closest match to the
-  // Sample 01 hero composition: bright, warm, teal palette).
+  // (Pexels 6627476, Kaboompics). Searched Pexels thoroughly (3 queries, 8
+  // candidates viewed: 3881145, 3845549, 19879741, 3845744, 3845727, 5355705,
+  // 4269368, 3884111) — no better match exists: the sitting/smiling-at-camera
+  // results are Black women (rejected per user) or white/blonde women not
+  // smiling. 6627476 stays: bright, warm, teal, plausibly South Asian.
   hero: "https://images.pexels.com/photos/6627476/pexels-photo-6627476.jpeg?auto=compress&cs=tinysrgb&w=1800",
   // Full clinic room, no people.
   heroAlt: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  clinic1: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  // About: bright modern operatory, BLUE chair (from behind), white cabinets,
+  // monitor + big window — closest to the Sample 01 About photo (teal chair,
+  // white cabinets, X-ray screen). Replaces 6812453 (black chair, darker).
+  clinic1: "https://images.pexels.com/photos/6809642/pexels-photo-6809642.jpeg?auto=compress&cs=tinysrgb&w=1200",
   clinic2: "https://images.pexels.com/photos/6809634/pexels-photo-6809634.jpeg?auto=compress&cs=tinysrgb&w=1200",
   clinic3: "https://images.pexels.com/photos/6812480/pexels-photo-6812480.jpeg?auto=compress&cs=tinysrgb&w=1200",
   clinic4: "https://images.pexels.com/photos/9062525/pexels-photo-9062525.jpeg?auto=compress&cs=tinysrgb&w=1200",

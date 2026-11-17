@@ -9,10 +9,10 @@ export default function StickyBookingBar() {
   if (pathname === "/booking" || pathname === "/admin") return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-lav bg-teal-deep">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-peach bg-teal-deep">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="min-w-0">
-          <p className="truncate text-sm font-bold text-lav-on-dark">
+          <p className="truncate text-sm font-bold text-peach-on-dark">
             ★ {CLINIC.rating} · {CLINIC.reviews}
             <span className="hidden sm:inline"> Google reviews</span>
           </p>
@@ -31,7 +31,7 @@ export default function StickyBookingBar() {
           </a>
           <Link
             href="/booking"
-            className="rounded-xl bg-lav-pale px-4 py-2.5 text-sm font-bold text-teal shadow-lav transition hover:bg-lav-bright sm:px-5"
+            className="rounded-xl bg-peach px-4 py-2.5 text-sm font-bold text-teal shadow-peach transition hover:bg-peach-bright sm:px-5"
           >
             Book a visit →
           </Link>

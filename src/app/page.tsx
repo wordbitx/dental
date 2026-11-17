@@ -112,7 +112,7 @@ export default function HomePage() {
   return (
     <div>
       {/* ============ HERO — Sample 01: text left, photo right (bleeds to the edge) ============ */}
-      <section className="overflow-hidden bg-ice">
+      <section className="overflow-hidden bg-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:pb-16 lg:pt-14">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal shadow-card">
@@ -121,7 +121,7 @@ export default function HomePage() {
             </span>
             <h1 className="mt-6 max-w-xl font-display text-[2.6rem] font-bold leading-[1.06] tracking-[-0.01em] text-teal sm:text-6xl lg:text-[3.6rem]">
               Advanced Dental Care for a{" "}
-              <span className="text-lav">Healthier Smile</span>
+              <span className="text-peach">Healthier Smile</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">
               Modern dental care with gentle treatment and honest, personalized plans — right here
@@ -174,9 +174,9 @@ export default function HomePage() {
 
           <Reveal delay={0.12} className="relative lg:-mr-[max(0px,calc((100vw-80rem)/2))]">
             <div className="relative">
-              {/* Soft light-purple arc behind the photo (Sample 01 motif) */}
-              <div className="absolute -left-6 -top-8 h-48 w-48 rounded-full bg-lav-pale sm:h-60 sm:w-60" aria-hidden="true" />
-              <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-lav-soft" aria-hidden="true" />
+              {/* Soft peach arc behind the photo (Sample 01 motif) */}
+              <div className="absolute -left-6 -top-8 h-48 w-48 rounded-full bg-peach-pale sm:h-60 sm:w-60" aria-hidden="true" />
+              <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-peach-soft" aria-hidden="true" />
               <div className="relative overflow-hidden rounded-[2rem] shadow-lift lg:rounded-l-[2rem] lg:rounded-r-none">
                 <Image
                   src={PHOTOS.hero}
@@ -190,7 +190,7 @@ export default function HomePage() {
               </div>
               {/* Floating badge — Sample 01 motif, bottom-right of the photo */}
               <div className="absolute -bottom-5 right-5 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lift sm:right-8">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-lav-pale text-teal">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-peach-pale text-teal">
                   <ToothIcon className="h-5 w-5" />
                 </span>
                 <span className="text-sm font-bold leading-tight text-teal">
@@ -209,10 +209,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-lav">—</span> Our Services <span className="text-lav">—</span>
+              <span className="text-peach">—</span> Our Services <span className="text-peach">—</span>
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl lg:text-[2.6rem]">
-              Comprehensive Dental <span className="text-lav">Solutions</span>
+              Comprehensive Dental <span className="text-peach">Solutions</span>
             </h2>
             <p className="mt-3 leading-relaxed text-muted">
               From routine checkups to advanced treatments, we&apos;ve got you covered.
@@ -228,7 +228,7 @@ export default function HomePage() {
                     href={`/treatments?id=${s.id}`}
                     className={`group flex h-full flex-col rounded-2xl p-5 transition-all hover:-translate-y-1 ${
                       highlighted
-                        ? "bg-lav-pale shadow-lav"
+                        ? "bg-peach-soft shadow-peach"
                         : "border border-teal/10 bg-white shadow-card hover:shadow-lift"
                     }`}
                   >
@@ -259,14 +259,14 @@ export default function HomePage() {
           </div>
 
           <Reveal className="mt-8 text-center">
-            <Link href="/treatments" className="text-sm font-bold text-teal underline decoration-lav decoration-2 underline-offset-4 hover:text-lav-deep">
+            <Link href="/treatments" className="text-sm font-bold text-teal underline decoration-peach decoration-2 underline-offset-4 hover:text-peach-deep">
               View all {TREATMENTS.length} treatments →
             </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* ============ ABOUT — photo | text | light-purple card (Sample 01) ============ */}
+      {/* ============ ABOUT — photo | text | peach card (Sample 01) ============ */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_1fr_0.62fr] lg:gap-10">
           <Reveal>
@@ -294,11 +294,11 @@ export default function HomePage() {
 
           <Reveal delay={0.08}>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-lav">—</span> About THE DENTAL HOME
+              <span className="text-peach">—</span> About THE DENTAL HOME
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
               Your Trusted Dental Clinic for a{" "}
-              <span className="text-lav">Perfect Smile</span>
+              <span className="text-peach">Perfect Smile</span>
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
               We combine modern technology with careful, compassionate care — so you leave with a
@@ -320,7 +320,7 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <div className="flex flex-col items-center rounded-[2rem] bg-lav-pale p-8 text-center shadow-card sm:p-10">
+            <div className="flex flex-col items-center rounded-[2rem] bg-peach-soft p-8 text-center shadow-card sm:p-10">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-teal shadow-card">
                 <ToothIcon className="h-10 w-10" />
               </span>
@@ -346,11 +346,11 @@ export default function HomePage() {
           <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.5fr] lg:gap-14">
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-                <span className="text-lav">—</span> Why Choose Us
+                <span className="text-peach">—</span> Why Choose Us
               </p>
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
                 Care That Puts{" "}
-                <span className="text-lav">You First</span>
+                <span className="text-peach">You First</span>
               </h2>
               <p className="mt-3 leading-relaxed text-muted">
                 The things that make a visit here different — the same care, every time.
@@ -364,7 +364,7 @@ export default function HomePage() {
                     <div className="flex flex-col items-center text-center">
                       <span
                         className={`flex h-24 w-24 items-center justify-center rounded-full sm:h-28 sm:w-28 ${
-                          i % 2 === 0 ? "bg-lav-pale text-teal" : "bg-teal-soft text-teal"
+                          i % 2 === 0 ? "bg-peach-pale text-teal" : "bg-teal-soft text-teal"
                         }`}
                       >
                         <Icon className="h-11 w-11 sm:h-12 sm:w-12" />
@@ -383,7 +383,7 @@ export default function HomePage() {
       </section>
 
       {/* ============ REVIEWS BAND — the sample's testimonial band, real Google aggregate ============ */}
-      <section className="bg-ice">
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
           <Reveal>
             <div className="relative flex flex-col items-center justify-between gap-8 overflow-hidden rounded-[2rem] bg-teal px-7 py-10 text-white shadow-lift sm:px-10 md:flex-row lg:px-12">
@@ -429,10 +429,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-lav">—</span> Our Smile Gallery <span className="text-lav">—</span>
+              <span className="text-peach">—</span> Our Smile Gallery <span className="text-peach">—</span>
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
-              Real Results, <span className="text-lav">Beautiful Smiles</span>
+              Real Results, <span className="text-peach">Beautiful Smiles</span>
             </h2>
             <p className="mt-3 leading-relaxed text-muted">
               Drag the slider to see what careful dentistry can do.
@@ -444,7 +444,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ CTA BAND — dark teal + light-purple button (dark text) ============ */}
+      {/* ============ CTA BAND — dark teal + peach button (dark text) ============ */}
       <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-20">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-teal-deep px-7 py-10 text-white shadow-lift sm:px-10 lg:px-12">
@@ -465,7 +465,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/booking"
-                className="shrink-0 rounded-full bg-lav-pale px-7 py-4 text-base font-bold text-teal shadow-lav transition hover:bg-lav-bright"
+                className="shrink-0 rounded-full bg-peach px-7 py-4 text-base font-bold text-teal shadow-peach transition hover:bg-peach-bright"
               >
                 Book Appointment →
               </Link>
@@ -475,11 +475,11 @@ export default function HomePage() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="bg-ice">
+      <section className="bg-white">
         <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-lav">—</span> Questions <span className="text-lav">—</span>
+              <span className="text-peach">—</span> Questions <span className="text-peach">—</span>
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.01em] text-teal sm:text-4xl">
               Before You Visit
@@ -496,7 +496,7 @@ export default function HomePage() {
                 href={WA_BOOK}
                 target="_blank"
                 rel="noreferrer"
-                className="font-bold text-teal underline decoration-lav decoration-2 underline-offset-4 hover:text-lav-deep"
+                className="font-bold text-teal underline decoration-peach decoration-2 underline-offset-4 hover:text-peach-deep"
               >
                 message us to confirm
               </a>

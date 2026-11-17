@@ -32,7 +32,7 @@ export default function Footer() {
               href={CLINIC.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-bold text-lav-on-dark underline decoration-lav/60 underline-offset-4 hover:text-white"
+              className="font-bold text-peach-on-dark underline decoration-peach/60 underline-offset-4 hover:text-white"
             >
               ★ {CLINIC.rating} from {CLINIC.reviews} Google reviews
             </a>
@@ -40,23 +40,23 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-lav-on-dark">Quick Links</p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-peach-on-dark">Quick Links</p>
           <ul className="mt-4 space-y-2.5 text-sm font-semibold">
-            <li><Link href="/" className="text-white/80 hover:text-lav-on-dark">Home</Link></li>
-            <li><Link href="/treatments" className="text-white/80 hover:text-lav-on-dark">Treatments</Link></li>
-            <li><Link href="/about" className="text-white/80 hover:text-lav-on-dark">About Us</Link></li>
-            <li><Link href="/booking" className="text-white/80 hover:text-lav-on-dark">Book Appointment</Link></li>
-            <li><Link href="/contact" className="text-white/80 hover:text-lav-on-dark">Contact</Link></li>
-            <li><Link href="/admin" className="text-white/60 hover:text-lav-on-dark">Admin dashboard</Link></li>
+            <li><Link href="/" className="text-white/80 hover:text-peach-on-dark">Home</Link></li>
+            <li><Link href="/treatments" className="text-white/80 hover:text-peach-on-dark">Treatments</Link></li>
+            <li><Link href="/about" className="text-white/80 hover:text-peach-on-dark">About Us</Link></li>
+            <li><Link href="/booking" className="text-white/80 hover:text-peach-on-dark">Book Appointment</Link></li>
+            <li><Link href="/contact" className="text-white/80 hover:text-peach-on-dark">Contact</Link></li>
+            <li><Link href="/admin" className="text-white/60 hover:text-peach-on-dark">Admin dashboard</Link></li>
           </ul>
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-lav-on-dark">Our Services</p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-peach-on-dark">Our Services</p>
           <ul className="mt-4 space-y-2.5 text-sm font-semibold">
             {TREATMENTS.slice(0, 6).map((t) => (
               <li key={t.id}>
-                <Link href={`/treatments?id=${t.id}`} className="text-white/80 hover:text-lav-on-dark">
+                <Link href={`/treatments?id=${t.id}`} className="text-white/80 hover:text-peach-on-dark">
                   {t.name}
                 </Link>
               </li>
@@ -65,16 +65,16 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-lav-on-dark">Contact Us</p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-peach-on-dark">Contact Us</p>
           <p className="mt-4 text-sm leading-relaxed text-white/80">{CLINIC.address}</p>
-          <a href={CLINIC.phoneHref} className="mt-3 block text-sm font-bold text-white hover:text-lav-on-dark">
+          <a href={CLINIC.phoneHref} className="mt-3 block text-sm font-bold text-white hover:text-peach-on-dark">
             {CLINIC.phoneDisplay}
           </a>
           <a
             href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I have a question.")}`}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 block text-sm font-bold text-lav-on-dark hover:text-white"
+            className="mt-2 block text-sm font-bold text-peach-on-dark hover:text-white"
           >
             WhatsApp us →
           </a>

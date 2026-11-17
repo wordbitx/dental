@@ -1,11 +1,12 @@
 import type { Config } from "tailwindcss";
 
-// SmileCare Sample 01 palette — CLONE. Deep teal + mint + VERY LIGHT PURPLE accent
-// (user's firm instruction: "bilkul light sa" purple).
+// SmileCare Sample 01 palette — EXACT match. Deep teal + WHITE + PEACH/ORANGE accent
+// (user's firm instruction: use the orange they used in the sample).
 // DEEP TEAL #0B4F5C (primary / headings / dark bands)
-// MINT #F0F7F7 (page background)
-// VERY LIGHT PURPLE: accent word #A78BFA, fills #DDD6FE / #EDE9FE / #C4B5FD.
-// Buttons that use light purple MUST use dark teal text (never white) — the
+// WHITE #FFFFFF (page background — the sample's background is white)
+// PEACH/ORANGE: accent word #F4A261, bright #F59E7B, deep #DD7E3A (hover),
+//   soft #FBE3D3 (highlight card), pale #FFF1E6 (pale fills), on-dark #FCD9C0.
+// Buttons that use peach MUST use dark teal text (never white) — the
 // primary CTA stays dark teal with white text.
 // (+ WhatsApp brand green, functional only)
 
@@ -24,17 +25,13 @@ const config: Config = {
           mid: "#14606E",
           soft: "#D9ECEF",
         },
-        lav: {
-          DEFAULT: "#A78BFA",
-          bright: "#C4B5FD",
-          deep: "#8B5CF6",
-          soft: "#EDE9FE",
-          pale: "#DDD6FE",
-          "on-dark": "#C4B5FD",
-        },
-        ice: {
-          DEFAULT: "#F0F7F7",
-          deep: "#E2EFEF",
+        peach: {
+          DEFAULT: "#F4A261",
+          bright: "#F59E7B",
+          deep: "#DD7E3A",
+          soft: "#FBE3D3",
+          pale: "#FFF1E6",
+          "on-dark": "#FCD9C0",
         },
         wa: {
           DEFAULT: "#25D366",
@@ -50,7 +47,7 @@ const config: Config = {
       boxShadow: {
         card: "0 10px 40px -12px rgba(11, 79, 92, 0.14)",
         lift: "0 24px 60px -20px rgba(11, 79, 92, 0.28)",
-        lav: "0 10px 30px -10px rgba(167, 139, 250, 0.45)",
+        peach: "0 10px 30px -10px rgba(244, 162, 97, 0.45)",
       },
     },
   },

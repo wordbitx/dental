@@ -5,11 +5,10 @@
 :root {
   --teal: #0b4f5c;
   --teal-deep: #083b45;
-  --lav: #a78bfa;
-  --lav-deep: #8b5cf6;
-  --ice: #f0f7f7;
+  --peach: #f4a261;
+  --peach-deep: #dd7e3a;
   --scrollbar-thumb: #0b4f5c;
-  --scrollbar-track: #e2efef;
+  --scrollbar-track: #e8edef;
 }
 
 html {
@@ -20,7 +19,7 @@ html {
 }
 
 body {
-  background-color: #f0f7f7;
+  background-color: #ffffff;
   color: #0b4f5c;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +34,7 @@ h3 {
 }
 
 ::selection {
-  background: #a78bfa;
+  background: #f4a261;
   color: #0b4f5c;
 }
 
@@ -70,7 +69,7 @@ input[type="range"].ba-range::-webkit-slider-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #a78bfa;
+  border: 2px solid #f4a261;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 input[type="range"].ba-range::-moz-range-thumb {
@@ -78,6 +77,6 @@ input[type="range"].ba-range::-moz-range-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #a78bfa;
+  border: 2px solid #f4a261;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

@@ -61,7 +61,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <Link
             href="/booking"
-            className="inline-flex items-center gap-2 rounded-full bg-lav-pale px-6 py-2.5 text-sm font-bold text-teal shadow-lav transition hover:bg-lav-bright"
+            className="inline-flex items-center gap-2 rounded-full bg-peach px-6 py-2.5 text-sm font-bold text-teal shadow-peach transition hover:bg-peach-bright"
           >
             Book Appointment →
           </Link>
@@ -112,7 +112,7 @@ export default function Header() {
             <Link
               href="/booking"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-lav-pale px-5 py-3 text-center text-sm font-bold text-teal shadow-lav"
+              className="mt-2 rounded-full bg-peach px-5 py-3 text-center text-sm font-bold text-teal shadow-peach"
             >
               Book Appointment →
             </Link>
