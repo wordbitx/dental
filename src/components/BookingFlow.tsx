@@ -125,7 +125,7 @@ export default function BookingFlow() {
                 i < step || (i === 4 && saved)
                   ? "bg-teal text-white"
                   : i === step
-                    ? "bg-lav text-white"
+                    ? "bg-lav text-teal"
                     : "bg-teal-soft text-teal"
               }`}
             >
@@ -186,7 +186,7 @@ export default function BookingFlow() {
                     onClick={() => setDate(d.iso)}
                     className={`rounded-2xl border p-3 text-center transition-all ${
                       date === d.iso
-                        ? "border-lav bg-lav text-white shadow-card"
+                        ? "border-lav bg-lav text-teal shadow-card"
                         : "border-teal/15 bg-white hover:border-lav/60"
                     }`}
                   >
@@ -214,7 +214,7 @@ export default function BookingFlow() {
                     onClick={() => setTime(slot)}
                     className={`rounded-2xl border px-4 py-4 text-center font-display text-lg font-bold transition-all ${
                       time === slot
-                        ? "border-lav bg-lav text-white shadow-card"
+                        ? "border-lav bg-lav text-teal shadow-card"
                         : "border-teal/15 bg-white text-teal hover:border-lav/60"
                     }`}
                   >
@@ -349,7 +349,7 @@ export default function BookingFlow() {
             <button
               type="button"
               onClick={confirmBooking}
-              className="rounded-xl bg-lav px-7 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-deep"
+              className="rounded-xl bg-lav px-7 py-3 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
             >
               Confirm booking
             </button>

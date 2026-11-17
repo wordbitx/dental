@@ -83,7 +83,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/booking?service=${active.id}`}
-              className="rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-deep"
+              className="rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
             >
               Book {active.name} →
             </Link>

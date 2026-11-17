@@ -75,7 +75,7 @@ export default function ContactPage() {
                 href={CLINIC.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-lav-deep"
+                className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-teal transition hover:bg-lav-bright"
               >
                 Open in Google Maps →
               </a>

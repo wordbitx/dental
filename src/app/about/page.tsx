@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/booking"
-                className="rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-white shadow-lav transition hover:bg-lav-deep"
+                className="rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-teal shadow-lav transition hover:bg-lav-bright"
               >
                 Book a visit →
               </Link>
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/booking"
-                className="rounded-xl bg-lav px-7 py-3.5 text-sm font-bold text-white transition hover:bg-lav-deep"
+                className="rounded-xl bg-lav px-7 py-3.5 text-sm font-bold text-teal transition hover:bg-lav-bright"
               >
                 Book a visit →
               </Link>

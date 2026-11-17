@@ -31,7 +31,7 @@ export default function StickyBookingBar() {
           </a>
           <Link
             href="/booking"
-            className="rounded-xl bg-lav px-4 py-2.5 text-sm font-bold text-white shadow-lav transition hover:bg-lav-deep sm:px-5"
+            className="rounded-xl bg-lav-pale px-4 py-2.5 text-sm font-bold text-teal shadow-lav transition hover:bg-lav-bright sm:px-5"
           >
             Book a visit →
           </Link>

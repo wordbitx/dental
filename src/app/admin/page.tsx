@@ -58,7 +58,7 @@ export default function AdminPage() {
         </div>
         <Link
           href="/booking"
-          className="rounded-xl bg-lav px-6 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-deep"
+          className="rounded-xl bg-lav px-6 py-3 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
         >
           Go to Booking →
         </Link>
@@ -97,7 +97,7 @@ export default function AdminPage() {
             </p>
             <Link
               href="/booking"
-              className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-lav-deep"
+              className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-sm font-bold text-teal shadow-card transition hover:bg-lav-bright"
             >
               Make a test booking →
             </Link>

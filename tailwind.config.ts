@@ -1,11 +1,12 @@
 import type { Config } from "tailwindcss";
 
-// SmileCare Sample 01 palette — mint/teal + LIGHT PURPLE accent:
+// SmileCare Sample 01 palette — CLONE. Deep teal + mint + VERY LIGHT PURPLE accent
+// (user's firm instruction: "bilkul light sa" purple).
 // DEEP TEAL #0B4F5C (primary / headings / dark bands)
-// MINT #F0F7F7 (page background) · LIGHT PURPLE (accent word + CTAs)
-// Buttons use a slightly deeper violet (#8B5CF6) so white button text stays
-// readable (4.0:1); the light purples (#A78BFA / #C4B5FD / #EDE9FE) carry
-// the highlights, icon fills and soft backgrounds.
+// MINT #F0F7F7 (page background)
+// VERY LIGHT PURPLE: accent word #A78BFA, fills #DDD6FE / #EDE9FE / #C4B5FD.
+// Buttons that use light purple MUST use dark teal text (never white) — the
+// primary CTA stays dark teal with white text.
 // (+ WhatsApp brand green, functional only)
 
 const config: Config = {
@@ -24,10 +25,11 @@ const config: Config = {
           soft: "#D9ECEF",
         },
         lav: {
-          DEFAULT: "#8B5CF6",
-          bright: "#A78BFA",
-          deep: "#7C3AED",
+          DEFAULT: "#A78BFA",
+          bright: "#C4B5FD",
+          deep: "#8B5CF6",
           soft: "#EDE9FE",
+          pale: "#DDD6FE",
           "on-dark": "#C4B5FD",
         },
         ice: {
@@ -42,13 +44,13 @@ const config: Config = {
         muted: "#52707C",
       },
       fontFamily: {
-        display: ["Inter", "system-ui", "sans-serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Poppins", "system-ui", "sans-serif"],
+        sans: ["Poppins", "system-ui", "sans-serif"],
       },
       boxShadow: {
         card: "0 10px 40px -12px rgba(11, 79, 92, 0.14)",
         lift: "0 24px 60px -20px rgba(11, 79, 92, 0.28)",
-        lav: "0 10px 30px -10px rgba(139, 92, 246, 0.45)",
+        lav: "0 10px 30px -10px rgba(167, 139, 250, 0.45)",
       },
     },
   },

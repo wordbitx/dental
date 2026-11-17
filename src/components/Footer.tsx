@@ -6,9 +6,9 @@ export default function Footer() {
     <footer className="bg-teal-deep text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+          <div className="flex items-center gap-2.5">
+            <span className="text-white">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-10 w-10">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

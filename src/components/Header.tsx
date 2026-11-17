@@ -20,9 +20,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-teal/10 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal text-white">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <span className="text-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-10 w-10">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -61,7 +61,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <Link
             href="/booking"
-            className="inline-flex items-center gap-2 rounded-full bg-lav px-6 py-2.5 text-sm font-bold text-white shadow-lav transition hover:bg-lav-deep"
+            className="inline-flex items-center gap-2 rounded-full bg-lav-pale px-6 py-2.5 text-sm font-bold text-teal shadow-lav transition hover:bg-lav-bright"
           >
             Book Appointment →
           </Link>
@@ -112,7 +112,7 @@ export default function Header() {
             <Link
               href="/booking"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-lav px-5 py-3 text-center text-sm font-bold text-white shadow-lav"
+              className="mt-2 rounded-full bg-lav-pale px-5 py-3 text-center text-sm font-bold text-teal shadow-lav"
             >
               Book Appointment →
             </Link>

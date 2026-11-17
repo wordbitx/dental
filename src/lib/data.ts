@@ -152,8 +152,10 @@ export const TREATMENTS: Treatment[] = [
 ];
 
 export const PHOTOS = {
-  // Hero: modern clinic interior, dental chair, no people (verified).
-  hero: "https://images.pexels.com/photos/6809642/pexels-photo-6809642.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  // Hero: woman smiling in a dental chair, dentist in a teal gown beside her
+  // (Pexels 6627476, Kaboompics — visually verified; closest match to the
+  // Sample 01 hero composition: bright, warm, teal palette).
+  hero: "https://images.pexels.com/photos/6627476/pexels-photo-6627476.jpeg?auto=compress&cs=tinysrgb&w=1800",
   // Full clinic room, no people.
   heroAlt: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1400",
   clinic1: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1200",

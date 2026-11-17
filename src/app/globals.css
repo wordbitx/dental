@@ -5,8 +5,8 @@
 :root {
   --teal: #0b4f5c;
   --teal-deep: #083b45;
-  --lav: #8b5cf6;
-  --lav-deep: #7c3aed;
+  --lav: #a78bfa;
+  --lav-deep: #8b5cf6;
   --ice: #f0f7f7;
   --scrollbar-thumb: #0b4f5c;
   --scrollbar-track: #e2efef;
@@ -35,7 +35,7 @@ h3 {
 }
 
 ::selection {
-  background: #8b5cf6;
+  background: #a78bfa;
   color: #0b4f5c;
 }
 
@@ -70,7 +70,7 @@ input[type="range"].ba-range::-webkit-slider-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #8b5cf6;
+  border: 2px solid #a78bfa;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 input[type="range"].ba-range::-moz-range-thumb {
@@ -78,6 +78,6 @@ input[type="range"].ba-range::-moz-range-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #8b5cf6;
+  border: 2px solid #a78bfa;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

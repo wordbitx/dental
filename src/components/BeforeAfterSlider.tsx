@@ -34,7 +34,7 @@ export default function BeforeAfterSlider() {
         <span className="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
           Before
         </span>
-        <span className="absolute right-4 top-4 rounded-full bg-lav px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+        <span className="absolute right-4 top-4 rounded-full bg-lav px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal">
           After
         </span>
 

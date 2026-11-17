@@ -56,7 +56,7 @@ export default async function TreatmentsPage({
             </p>
             <a
               href="/booking"
-              className="mt-5 inline-block rounded-xl bg-lav px-7 py-3.5 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-deep"
+              className="mt-5 inline-block rounded-xl bg-lav px-7 py-3.5 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
             >
               Book a check-up →
             </a>
