@@ -50,7 +50,7 @@ export default function HomePage() {
             >
               <span className="text-amber-deep">★★★★★</span> {CLINIC.rating} · {CLINIC.reviews} Google reviews
             </a>
-            <h1 className="mt-5 max-w-3xl font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-3xl font-display text-5xl font-extrabold leading-[1.05] tracking-[-0.035em] text-white sm:text-6xl lg:text-7xl">
               Strong, <span className="text-amber-bright">honest</span> dental care in Cantt, Lahore.
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
@@ -99,7 +99,7 @@ export default function HomePage() {
           ].map((s, i) => (
             <Reveal key={s.small} delay={i * 0.06}>
               <div className="h-full rounded-2xl border-t-4 border-amber bg-white p-5 shadow-lift">
-                <p className="font-display text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">{s.big}</p>
+                <p className="font-display text-3xl font-extrabold tracking-[-0.02em] text-navy sm:text-4xl">{s.big}</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-wider text-muted">{s.small}</p>
               </div>
             </Reveal>
@@ -113,7 +113,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-deep">Treatments</p>
-              <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl lg:text-[2.6rem]">
+              <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight tracking-[-0.02em] text-navy sm:text-4xl lg:text-[2.6rem]">
                 What we treat — pick a treatment to see the details.
               </h2>
             </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-display text-xl font-extrabold leading-snug tracking-tight text-navy">{t.name}</h3>
+                  <h3 className="font-display text-xl font-extrabold leading-snug tracking-[-0.02em] text-navy">{t.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{t.short}</p>
                   <span className="mt-4 text-sm font-extrabold text-amber-deep">
                     Learn more →
@@ -166,7 +166,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-bright">The difference</p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight tracking-[-0.02em] sm:text-4xl">
               Small changes, <span className="text-amber-bright">visible</span> results.
             </h2>
             <p className="mt-4 max-w-lg leading-relaxed text-white/80">
@@ -200,11 +200,11 @@ export default function HomePage() {
       </section>
 
       {/* ============ HOW BOOKING WORKS — 3 steps ============ */}
-      <section className="bg-mist py-12 lg:py-16">
+      <section className="bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-deep">How it works</p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-[-0.02em] text-navy sm:text-4xl">
               Booked in three steps.
             </h2>
           </Reveal>
@@ -234,7 +234,7 @@ export default function HomePage() {
                   <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-amber font-display text-lg font-extrabold text-navy-deep">
                     {s.n}
                   </span>
-                  <h3 className="relative mt-4 font-display text-xl font-extrabold tracking-tight text-navy">{s.title}</h3>
+                  <h3 className="relative mt-4 font-display text-xl font-extrabold tracking-[-0.02em] text-navy">{s.title}</h3>
                   <p className="relative mt-2 leading-relaxed text-muted">{s.body}</p>
                 </div>
               </Reveal>
@@ -247,7 +247,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <Reveal>
           <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-deep">Why patients choose us</p>
-          <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-extrabold tracking-[-0.02em] text-navy sm:text-4xl">
             Dentistry that treats you like a person, not a number.
           </h2>
         </Reveal>
@@ -269,7 +269,7 @@ export default function HomePage() {
             <Reveal key={c.title} delay={i * 0.08}>
               <div className="h-full rounded-2xl border-t-4 border-amber bg-white p-6 shadow-card">
                 <span className="font-display text-4xl font-extrabold text-amber">0{i + 1}</span>
-                <h3 className="mt-3 font-display text-xl font-extrabold tracking-tight text-navy">{c.title}</h3>
+                <h3 className="mt-3 font-display text-xl font-extrabold tracking-[-0.02em] text-navy">{c.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{c.body}</p>
               </div>
             </Reveal>
@@ -281,7 +281,7 @@ export default function HomePage() {
       <section className="bg-amber py-12 lg:py-14">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
           <Reveal>
-            <p className="font-display text-5xl font-extrabold tracking-tight text-navy-deep sm:text-6xl">
+            <p className="font-display text-5xl font-extrabold tracking-[-0.02em] text-navy-deep sm:text-6xl">
               ★ {CLINIC.rating} <span className="text-2xl font-bold text-navy-deep/70">/ 5.0</span>
             </p>
             <p className="mt-2 text-lg font-bold text-navy-deep">
@@ -316,7 +316,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="relative z-10 -mt-24 max-w-xl rounded-2xl bg-white p-7 shadow-lift sm:p-9">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-deep">Visit us</p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy">
+            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-[-0.02em] text-navy">
               Come and see the clinic.
             </h2>
             <p className="mt-3 leading-relaxed text-muted">{CLINIC.address}</p>
@@ -349,7 +349,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-amber-deep">Questions</p>
-          <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-extrabold tracking-[-0.02em] text-navy sm:text-4xl">
             Before you visit
           </h2>
           <p className="mt-3 leading-relaxed text-muted">The things patients usually ask us first.</p>
