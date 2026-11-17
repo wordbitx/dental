@@ -1,24 +1,29 @@
-# THE DENTAL HOME — Dental Clinic Demo (Pakistan)
+# THE DENTAL HOME — Premium Dental Clinic Website
 
-A premium, single-page demo website for **THE DENTAL HOME**, a real dental clinic in Lahore Cantt, Pakistan — built by **WordbitX** as a pitch demo.
+A senior-level Next.js 15 (App Router) + TypeScript + Tailwind CSS + Framer Motion website for **THE DENTAL HOME**, a real dental clinic in Cantt, Lahore.
 
-## Clinic (real public data only)
-
-- **Name:** THE DENTAL HOME
+- **Clinic:** THE DENTAL HOME — Ground Floor, Al Rehman Shopping Plaza, Opposite HBL Cantt Branch, Saddar Bazar, Dhaka Road, Cantt, Lahore
 - **Phone / WhatsApp:** +92 304 2727277
-- **Address:** Ground Floor, Al Rehman Shopping Plaza, Opposite HBL Cantt Branch, Saddar Bazar, Dhaka Road, Cantt, Lahore, Pakistan
-- **Google rating:** 5.0 stars from 504 reviews
-- **Website:** none (this demo shows what one could look like)
+- **Google rating:** 5.0 stars from 504 reviews (no website — this demo is the pitch)
 
-## What is in this repo
+## What it includes
 
-- `index.html` — the complete demo site (static, no build step). Open it in a browser or deploy it on Vercel as-is.
-- `README.md` — this file.
+- Multi-page app: Home, Treatments, About, Booking, Contact + Admin dashboard
+- Multi-step booking flow (service → date → preferred time → details → confirmation) that saves bookings to localStorage and hands the summary to WhatsApp
+- Before/after smile slider, treatment explorer (8 treatments), FAQ accordion, sticky booking bar
+- Framer Motion page transitions + scroll reveals, mobile-first, premium "boutique hotel, not a clinic" design (warm ivory, deep teal, brass; Fraunces + Inter)
 
-## Design
+## Admin dashboard
 
-Premium editorial style: Fraunces serif headings + Inter body, deep teal + copper on warm white, real Pexels dental photography, scroll-reveal animations, animated counters, working FAQ accordion, WhatsApp booking (`wa.me/92304272777`).
+Visit **/admin** to see bookings made through the booking flow (stored in the browser only, localStorage key `tdh-appointments`). Confirm or Cancel each appointment. No backend, no auth — demo only. No appointments are seeded; only bookings a visitor actually makes appear here.
 
-## Honest-content note
+## Run
 
-This is a **demo**, not the clinic's live site. It uses only the clinic's real public data (name, phone, address, Google rating). It invents no doctor names, no patient review quotes, no prices and no offers.
+```bash
+npm install
+npm run dev
+```
+
+Deploys on Vercel straight from this repo.
+
+> WordbitX demo — built for THE DENTAL HOME, Lahore.
