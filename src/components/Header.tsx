@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { CLINIC } from "@/lib/data";
+import { CLINIC, WHATSAPP_BASE } from "@/lib/data";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -18,10 +18,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-teal/10 bg-ivory/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b-2 border-gold bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-teal text-ivory">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-teal text-white">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
               <path
                 strokeLinecap="round"
@@ -31,10 +31,10 @@ export default function Header() {
             </svg>
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-lg font-semibold tracking-wide text-teal">
+            <span className="block font-display text-lg font-black tracking-wide text-teal">
               THE DENTAL HOME
             </span>
-            <span className="block text-[11px] uppercase tracking-[0.18em] text-muted">
+            <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
               Cantt · Lahore
             </span>
           </span>
@@ -45,8 +45,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-copper ${
-                pathname === item.href ? "text-copper" : "text-ink"
+              className={`text-sm font-bold transition-colors hover:text-gold-deep ${
+                pathname === item.href ? "text-gold-deep" : "text-ink"
               }`}
             >
               {item.label}
@@ -57,13 +57,21 @@ export default function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={CLINIC.phoneHref}
-            className="text-sm font-semibold text-teal hover:text-copper"
+            className="text-sm font-extrabold text-teal hover:text-gold-deep"
           >
             {CLINIC.phoneDisplay}
           </a>
+          <a
+            href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-xl bg-gold px-5 py-2.5 text-sm font-extrabold text-teal-deep shadow-gold transition hover:bg-gold-bright"
+          >
+            WhatsApp us
+          </a>
           <Link
             href="/booking"
-            className="rounded-full bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-copper-deep"
+            className="rounded-xl bg-teal px-5 py-2.5 text-sm font-extrabold text-white shadow-card transition hover:bg-teal-deep"
           >
             Book a visit
           </Link>
@@ -73,9 +81,9 @@ export default function Header() {
           type="button"
           aria-label="Menu"
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-teal/20 text-teal lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-teal/20 text-teal lg:hidden"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
             {open ? (
               <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
             ) : (
@@ -86,14 +94,14 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-teal/10 bg-ivory px-4 pb-5 pt-3 lg:hidden">
+        <nav className="border-t border-teal/10 bg-white px-4 pb-5 pt-3 lg:hidden">
           <div className="flex flex-col gap-1">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg px-3 py-2.5 text-base font-medium ${
+                className={`rounded-lg px-3 py-2.5 text-base font-bold ${
                   pathname === item.href ? "bg-teal-soft text-teal" : "text-ink"
                 }`}
               >
@@ -103,20 +111,28 @@ export default function Header() {
             <Link
               href="/admin"
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-base font-medium text-muted"
+              className="rounded-lg px-3 py-2.5 text-base font-bold text-muted"
             >
               Admin dashboard
             </Link>
             <a
+              href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 rounded-xl bg-gold px-5 py-3 text-center text-sm font-extrabold text-teal-deep shadow-gold"
+            >
+              WhatsApp us
+            </a>
+            <a
               href={CLINIC.phoneHref}
-              className="mt-2 rounded-full bg-teal px-5 py-3 text-center text-sm font-semibold text-white"
+              className="rounded-xl bg-teal px-5 py-3 text-center text-sm font-extrabold text-white"
             >
               Call {CLINIC.phoneDisplay}
             </a>
             <Link
               href="/booking"
               onClick={() => setOpen(false)}
-              className="rounded-full bg-copper px-5 py-3 text-center text-sm font-semibold text-white"
+              className="rounded-xl border-2 border-teal/25 px-5 py-3 text-center text-sm font-extrabold text-teal"
             >
               Book a visit
             </Link>

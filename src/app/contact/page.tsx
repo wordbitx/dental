@@ -11,8 +11,8 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <Reveal className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-copper">Contact</p>
-        <h1 className="mt-3 font-display text-4xl font-semibold text-teal sm:text-5xl">
+        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep">Contact</p>
+        <h1 className="mt-3 font-display text-4xl font-extrabold text-teal sm:text-5xl">
           Talk to us.
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted">
@@ -30,26 +30,26 @@ export default function ContactPage() {
               )}`}
               target="_blank"
               rel="noreferrer"
-              className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift"
+              className="rounded-2xl border-2 border-gold bg-teal p-6 shadow-lift transition-all hover:-translate-y-1"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">WhatsApp</p>
-              <p className="mt-2 font-display text-2xl font-semibold text-teal">{CLINIC.phoneDisplay}</p>
-              <p className="mt-1 text-muted">Fastest way to reach us — bookings, questions, pain.</p>
-              <span className="mt-3 inline-block text-sm font-semibold text-copper">Message on WhatsApp →</span>
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-bright">WhatsApp — fastest way</p>
+              <p className="mt-2 font-display text-2xl font-extrabold text-white">{CLINIC.phoneDisplay}</p>
+              <p className="mt-1 text-white/75">Fastest way to reach us — bookings, questions, pain.</p>
+              <span className="mt-3 inline-block text-sm font-extrabold text-gold-bright">Message on WhatsApp →</span>
             </a>
 
             <a
               href={CLINIC.phoneHref}
-              className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift"
+              className="rounded-2xl border border-teal/10 bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Call</p>
-              <p className="mt-2 font-display text-2xl font-semibold text-teal">{CLINIC.phoneDisplay}</p>
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep">Call</p>
+              <p className="mt-2 font-display text-2xl font-extrabold text-teal">{CLINIC.phoneDisplay}</p>
               <p className="mt-1 text-muted">For urgent pain or same-day help, call us directly.</p>
-              <span className="mt-3 inline-block text-sm font-semibold text-copper">Call now →</span>
+              <span className="mt-3 inline-block text-sm font-semibold text-gold-deep">Call now →</span>
             </a>
 
-            <div className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Timings</p>
+            <div className="rounded-2xl border border-gold/50 bg-gold-soft p-6 shadow-card">
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-deep">Timings</p>
               <p className="mt-2 leading-relaxed text-muted">
                 Timings are confirmed on WhatsApp — message us to confirm before you visit.
               </p>
@@ -58,10 +58,10 @@ export default function ContactPage() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="flex h-full flex-col rounded-3xl bg-teal p-7 text-ivory shadow-lift sm:p-9">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper-soft">Visit the clinic</p>
-            <p className="mt-3 font-display text-2xl font-semibold leading-snug">{CLINIC.address}</p>
-            <p className="mt-4 leading-relaxed text-ivory/75">
+          <div className="flex h-full flex-col rounded-2xl border-2 border-gold bg-teal-deep p-7 text-white shadow-lift sm:p-9">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-bright">Visit the clinic</p>
+            <p className="mt-3 font-display text-2xl font-extrabold leading-snug">{CLINIC.address}</p>
+            <p className="mt-4 leading-relaxed text-white/75">
               We are on the ground floor of Al Rehman Shopping Plaza, opposite the HBL Cantt
               branch in Saddar Bazar — easy to find from Dhaka Road.
             </p>
@@ -69,7 +69,7 @@ export default function ContactPage() {
               href={CLINIC.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-block rounded-full bg-copper px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-copper-deep"
+              className="mt-6 inline-block rounded-xl bg-gold px-6 py-3 text-center text-sm font-extrabold text-teal-deep transition hover:bg-gold-bright"
             >
               Open in Google Maps →
             </a>
@@ -77,7 +77,7 @@ export default function ContactPage() {
               href={CLINIC.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 inline-block rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:border-white"
+              className="mt-3 inline-block rounded-xl border-2 border-white/40 px-6 py-3 text-center text-sm font-bold text-white transition hover:border-white"
             >
               Read our {CLINIC.reviews} Google reviews ★ {CLINIC.rating}
             </a>

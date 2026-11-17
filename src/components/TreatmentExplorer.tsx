@@ -63,7 +63,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
             className={`flex shrink-0 items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-all lg:w-full ${
               activeId === t.id
                 ? "border-teal bg-teal text-white shadow-card"
-                : "border-teal/15 bg-ivory-card text-teal hover:border-copper/60"
+                : "border-teal/15 bg-white text-teal hover:border-gold/60"
             }`}
           >
             <span
@@ -74,7 +74,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
               <TreatmentIcon id={t.id} className="h-5 w-5" />
             </span>
             <span>
-              <span className="block font-display text-base font-semibold leading-snug">{t.name}</span>
+              <span className="block font-display text-base font-extrabold leading-snug">{t.name}</span>
               <span className={`block text-xs ${activeId === t.id ? "text-white/70" : "text-muted"}`}>
                 {t.duration}
               </span>
@@ -90,23 +90,23 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card sm:p-9"
+          className="rounded-2xl border border-teal/10 bg-white p-6 shadow-card sm:p-9"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal">
+          <span className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-teal">
             <TreatmentIcon id={active.id} className="h-4 w-4" />
             Treatment
           </span>
-          <h2 className="mt-4 font-display text-3xl font-semibold text-teal sm:text-4xl">{active.name}</h2>
-          <p className="mt-2 font-display text-lg italic text-copper">{active.short}</p>
+          <h2 className="mt-4 font-display text-3xl font-extrabold text-teal sm:text-4xl">{active.name}</h2>
+          <p className="mt-2 font-display text-lg italic text-gold-deep">{active.short}</p>
           <p className="mt-4 leading-relaxed text-muted">{active.description}</p>
 
           <dl className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-ivory px-4 py-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">Typical visit</dt>
+            <div className="rounded-2xl bg-gold-soft px-4 py-3">
+              <dt className="text-xs font-extrabold uppercase tracking-wider text-muted">Typical visit</dt>
               <dd className="mt-1 font-semibold text-teal">{active.duration}</dd>
             </div>
-            <div className="rounded-2xl bg-ivory px-4 py-3">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">Best for</dt>
+            <div className="rounded-2xl bg-gold-soft px-4 py-3">
+              <dt className="text-xs font-extrabold uppercase tracking-wider text-muted">Best for</dt>
               <dd className="mt-1 font-semibold text-teal">{active.forWhom}</dd>
             </div>
           </dl>
@@ -123,7 +123,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/booking?service=${active.id}`}
-              className="rounded-full bg-copper px-6 py-3 text-center text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-copper-deep"
+              className="rounded-xl bg-gold px-6 py-3 text-center text-sm font-extrabold text-teal-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-gold-bright"
             >
               Book {active.name} →
             </Link>

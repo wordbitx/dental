@@ -1,6 +1,6 @@
 export const CLINIC = {
   name: "THE DENTAL HOME",
-  tagline: "Calm, careful dentistry in the heart of Cantt.",
+  tagline: "Strong, honest dental care in Saddar Bazar, Cantt.",
   phoneDisplay: "+92 304 2727277",
   phoneHref: "tel:+92304272777",
   whatsappNumber: "92304272777",

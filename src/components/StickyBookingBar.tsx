@@ -2,35 +2,35 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CLINIC } from "@/lib/data";
+import { CLINIC, WHATSAPP_BASE } from "@/lib/data";
 
 export default function StickyBookingBar() {
   const pathname = usePathname();
   if (pathname === "/booking" || pathname === "/admin") return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-teal/10 bg-white/95 backdrop-blur-md">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-gold bg-teal-deep">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-teal">
+          <p className="truncate text-sm font-extrabold text-gold-bright">
             ★ {CLINIC.rating} · {CLINIC.reviews} Google reviews
           </p>
-          <p className="hidden truncate text-xs text-muted sm:block">
+          <p className="hidden truncate text-xs font-medium text-white/70 sm:block">
             {CLINIC.addressShort} — message us to confirm timings
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href={`${"https://wa.me/" + CLINIC.whatsappNumber}`}
+            href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full border border-teal/25 px-4 py-2.5 text-sm font-semibold text-teal transition-colors hover:border-teal sm:block"
+            className="rounded-xl bg-gold px-4 py-2.5 text-sm font-extrabold text-teal-deep shadow-gold transition hover:bg-gold-bright sm:px-5"
           >
             WhatsApp
           </a>
           <Link
             href="/booking"
-            className="rounded-full bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-copper-deep"
+            className="rounded-xl border-2 border-white/50 px-4 py-2.5 text-sm font-extrabold text-white transition hover:border-white hover:bg-white/10 sm:px-5"
           >
             Book a visit →
           </Link>

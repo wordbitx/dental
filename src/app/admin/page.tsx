@@ -48,8 +48,8 @@ export default function AdminPage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-copper">Admin dashboard</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-teal sm:text-5xl">Appointments</h1>
+          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep">Admin dashboard</p>
+          <h1 className="mt-3 font-display text-4xl font-extrabold text-teal sm:text-5xl">Appointments</h1>
           <p className="mt-3 max-w-xl leading-relaxed text-muted">
             Bookings made through the website appear here. They are stored in this browser only
             (demo — no backend). Confirm or cancel each request, then confirm the slot with the
@@ -58,7 +58,7 @@ export default function AdminPage() {
         </div>
         <Link
           href="/booking"
-          className="rounded-full bg-copper px-6 py-3 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-copper-deep"
+          className="rounded-xl bg-gold px-6 py-3 text-sm font-extrabold text-teal-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-gold-bright"
         >
           Go to Booking →
         </Link>
@@ -72,15 +72,15 @@ export default function AdminPage() {
           { label: "Upcoming", value: stats.upcoming },
           { label: "Awaiting confirmation", value: stats.pending },
         ].map((s) => (
-          <div key={s.label} className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card">
-            <p className="font-display text-4xl font-semibold text-teal">{loaded ? s.value : "—"}</p>
+          <div key={s.label} className="rounded-2xl border-2 border-teal/10 border-t-4 border-t-gold bg-white p-6 shadow-card">
+            <p className="font-display text-4xl font-extrabold text-teal">{loaded ? s.value : "—"}</p>
             <p className="mt-1 text-sm text-muted">{s.label}</p>
           </div>
         ))}
       </div>
 
       {/* Table */}
-      <div className="mt-8 overflow-hidden rounded-3xl border border-teal/10 bg-ivory-card shadow-card">
+      <div className="mt-8 overflow-hidden rounded-2xl border border-teal/10 bg-white shadow-card">
         {!loaded ? (
           <p className="p-10 text-center text-muted">Loading appointments…</p>
         ) : appointments.length === 0 ? (
@@ -90,14 +90,14 @@ export default function AdminPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v4m8-4v4M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
               </svg>
             </span>
-            <h2 className="mt-4 font-display text-2xl font-semibold text-teal">No appointments yet</h2>
+            <h2 className="mt-4 font-display text-2xl font-extrabold text-teal">No appointments yet</h2>
             <p className="mx-auto mt-2 max-w-md text-muted">
               Bookings made here will appear. Nothing is seeded — only real bookings from the
               booking flow show up.
             </p>
             <Link
               href="/booking"
-              className="mt-6 inline-block rounded-full bg-copper px-6 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-copper-deep"
+              className="mt-6 inline-block rounded-xl bg-gold px-6 py-3 text-sm font-extrabold text-teal-deep shadow-card transition hover:bg-gold-bright"
             >
               Make a test booking →
             </Link>
@@ -106,7 +106,7 @@ export default function AdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-left text-sm">
               <thead>
-                <tr className="border-b border-teal/10 bg-ivory text-xs uppercase tracking-wider text-muted">
+                <tr className="border-b border-teal/10 bg-gold-soft text-xs uppercase tracking-wider text-muted">
                   <th className="px-5 py-4 font-semibold">Patient</th>
                   <th className="px-5 py-4 font-semibold">Phone</th>
                   <th className="px-5 py-4 font-semibold">Treatment</th>
@@ -139,7 +139,7 @@ export default function AdminPage() {
                           <button
                             type="button"
                             onClick={() => updateStatus(a.id, "Confirmed")}
-                            className="rounded-full bg-teal px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-teal-deep"
+                            className="rounded-xl bg-teal px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-teal-deep"
                           >
                             Confirm
                           </button>
@@ -148,7 +148,7 @@ export default function AdminPage() {
                           <button
                             type="button"
                             onClick={() => updateStatus(a.id, "Cancelled")}
-                            className="rounded-full border border-red-200 px-3.5 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
+                            className="rounded-xl border border-red-200 px-3.5 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50"
                           >
                             Cancel
                           </button>

@@ -13,8 +13,8 @@ export default function BookingPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <Reveal className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-copper">Booking</p>
-        <h1 className="mt-3 font-display text-4xl font-semibold text-teal sm:text-5xl">
+        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-gold-deep">Booking</p>
+        <h1 className="mt-3 font-display text-4xl font-extrabold text-teal sm:text-5xl">
           Book your visit.
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted">
@@ -31,7 +31,7 @@ export default function BookingPage() {
       </Reveal>
 
       <Reveal className="mt-10" delay={0.1}>
-        <div className="rounded-3xl border border-teal/10 bg-ivory-card p-6 shadow-card sm:p-9">
+        <div className="rounded-2xl border-2 border-teal/10 border-t-4 border-t-gold bg-white p-6 shadow-card sm:p-9">
           <Suspense
             fallback={
               <p className="py-10 text-center text-muted">Loading the booking form…</p>
