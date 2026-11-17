@@ -22,7 +22,7 @@ export default function Faq() {
               <span className="font-display text-lg font-bold text-teal">{item.q}</span>
               <span
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all ${
-                  isOpen ? "rotate-45 border-lav bg-lav text-teal" : "border-teal/25 text-teal"
+                  isOpen ? "rotate-45 border-teal bg-teal text-white" : "border-teal/25 text-teal"
                 }`}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">

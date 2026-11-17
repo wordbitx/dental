@@ -196,6 +196,42 @@ export const FAQS = [
     q: "How do I pay?",
     a: "Payment is taken at the clinic after your visit. Message us on WhatsApp if you would like to know the fee for a specific treatment before you come.",
   },
+  {
+    q: "What are clear aligners, and how are they different from braces?",
+    a: "Clear aligners are transparent, removable trays that gently move teeth into place. Unlike fixed braces, you take them out to eat and brush. They suit mild to moderate crowding and spacing — a check-up and X-ray show whether they are right for your bite.",
+  },
+  {
+    q: "What are veneers?",
+    a: "Veneers are thin, custom-made shells bonded to the front of a tooth to improve its colour, shape or alignment. They are a cosmetic option for front teeth — we will tell you honestly whether a veneer, whitening or a filling is the better answer for your case.",
+  },
+  {
+    q: "When is a tooth extraction necessary?",
+    a: "A tooth is removed only when it cannot be saved — severe decay, advanced gum disease, a fracture below the gum line, or overcrowding before orthodontic treatment. We explain the reason and the replacement options before anything is done.",
+  },
+  {
+    q: "How often should I get scaling and polishing?",
+    a: "Every 6 months is the usual advice. Scaling removes tartar that brushing cannot, and polishing smooths the tooth surface so plaque builds up more slowly. If your gums bleed when you brush, an earlier visit is a good idea.",
+  },
+  {
+    q: "What is a filling, and how long does it last?",
+    a: "A filling repairs a tooth damaged by decay or a small fracture, restoring its shape and strength. How long it lasts depends on the size, the material and how you look after it — regular check-ups let us spot wear early, before it becomes a bigger problem.",
+  },
+  {
+    q: "Why are my teeth sensitive to hot and cold?",
+    a: "Sensitivity usually comes from worn enamel, receding gums or a cracked filling exposing the dentine underneath. It is often treatable — with a desensitising treatment, a filling, or by fixing the cause, such as hard brushing or grinding. If it is sudden or one-sided, book a check-up.",
+  },
+  {
+    q: "Why should I have a dental check-up every 6 months?",
+    a: "Small problems — early decay, gum inflammation, a hairline crack — are painless and invisible to you, but easy to treat when caught early. A 6-month check-up keeps treatment small, simple and less costly than waiting for pain.",
+  },
+  {
+    q: "Is a root canal painful?",
+    a: "Modern root canal treatment is done under anaesthesia, so the procedure itself should not hurt — most patients say the relief afterwards is the memorable part. Mild soreness for a day or two is normal and settles with ordinary pain relief.",
+  },
+  {
+    q: "What counts as a dental emergency, and what should I do?",
+    a: "Sudden severe pain, swelling, a knocked-out or broken tooth, or bleeding that will not stop. Message us on WhatsApp straight away and tell us what happened — we will fit you in as soon as we can and guide you until you arrive. For a knocked-out tooth, keep it moist and do not scrub the root.",
+  },
 ];
 
 export type AppointmentStatus = "Pending" | "Confirmed" | "Cancelled";

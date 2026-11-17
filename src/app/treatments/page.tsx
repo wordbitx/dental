@@ -21,7 +21,7 @@ export default async function TreatmentsPage({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-peach-on-dark">Treatments</p>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-white">Treatments</p>
               <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
                 Care, treatment by treatment.
               </h1>
@@ -56,7 +56,7 @@ export default async function TreatmentsPage({
             </p>
             <a
               href="/booking"
-              className="mt-5 inline-block rounded-xl bg-peach px-7 py-3.5 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-peach-bright"
+              className="mt-5 inline-block rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-white/90"
             >
               Book a check-up →
             </a>

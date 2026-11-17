@@ -14,8 +14,8 @@ function fmtDate(iso: string) {
 }
 
 const STATUS_STYLE: Record<Appointment["status"], string> = {
-  Pending: "bg-lav-soft text-teal",
-  Confirmed: "bg-teal-soft text-teal",
+  Pending: "bg-teal-soft text-teal",
+  Confirmed: "bg-teal text-white",
   Cancelled: "bg-red-50 text-red-700",
 };
 
@@ -58,7 +58,7 @@ export default function AdminPage() {
         </div>
         <Link
           href="/booking"
-          className="rounded-xl bg-lav px-6 py-3 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
+          className="rounded-xl bg-teal px-6 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-teal-deep"
         >
           Go to Booking →
         </Link>
@@ -72,7 +72,7 @@ export default function AdminPage() {
           { label: "Upcoming", value: stats.upcoming },
           { label: "Awaiting confirmation", value: stats.pending },
         ].map((s) => (
-          <div key={s.label} className="rounded-2xl border-2 border-teal/10 border-t-4 border-t-lav bg-white p-6 shadow-card">
+          <div key={s.label} className="rounded-2xl border-2 border-teal/10 border-t-4 border-t-teal bg-white p-6 shadow-card">
             <p className="font-display text-4xl font-bold text-teal">{loaded ? s.value : "—"}</p>
             <p className="mt-1 text-sm text-muted">{s.label}</p>
           </div>
@@ -97,7 +97,7 @@ export default function AdminPage() {
             </p>
             <Link
               href="/booking"
-              className="mt-6 inline-block rounded-xl bg-lav px-6 py-3 text-sm font-bold text-teal shadow-card transition hover:bg-lav-bright"
+              className="mt-6 inline-block rounded-xl bg-teal px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-teal-deep"
             >
               Make a test booking →
             </Link>
@@ -106,7 +106,7 @@ export default function AdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-left text-sm">
               <thead>
-                <tr className="border-b border-teal/10 bg-lav-soft text-xs uppercase tracking-wider text-muted">
+                <tr className="border-b border-teal/10 bg-teal-soft text-xs uppercase tracking-wider text-muted">
                   <th className="px-5 py-4 font-semibold">Patient</th>
                   <th className="px-5 py-4 font-semibold">Phone</th>
                   <th className="px-5 py-4 font-semibold">Treatment</th>

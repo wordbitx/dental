@@ -26,9 +26,9 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-peach-on-dark">About the clinic</p>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-white">About the clinic</p>
               <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
-                A neighbourhood clinic with a <span className="text-peach-on-dark">high standard.</span>
+                A neighbourhood clinic with a <span className="text-white">high standard.</span>
               </h1>
               <p className="mt-4 text-lg leading-relaxed text-white/80">
                 THE DENTAL HOME sits in Saddar Bazar, Cantt — a practice built around one idea: that
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/booking"
-                className="rounded-xl bg-peach px-6 py-3 text-center text-sm font-bold text-teal shadow-peach transition hover:bg-peach-bright"
+                className="rounded-xl bg-teal px-6 py-3 text-center text-sm font-bold text-white shadow-card transition hover:bg-teal-deep"
               >
                 Book a visit →
               </Link>
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/booking"
-                className="rounded-xl bg-peach px-7 py-3.5 text-sm font-bold text-teal transition hover:bg-peach-bright"
+                className="rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-teal shadow-card transition hover:bg-white/90"
               >
                 Book a visit →
               </Link>

@@ -23,7 +23,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
             className={`flex shrink-0 items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-all lg:w-full ${
               activeId === t.id
                 ? "border-teal bg-teal text-white shadow-card"
-                : "border-teal/15 bg-white text-teal hover:border-lav/60"
+                : "border-teal/15 bg-white text-teal hover:border-teal/60"
             }`}
           >
             <span
@@ -61,11 +61,11 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           <p className="mt-4 leading-relaxed text-muted">{active.description}</p>
 
           <dl className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-lav-soft px-4 py-3">
+            <div className="rounded-2xl bg-teal-soft px-4 py-3">
               <dt className="text-xs font-bold uppercase tracking-wider text-muted">Typical visit</dt>
               <dd className="mt-1 font-semibold text-teal">{active.duration}</dd>
             </div>
-            <div className="rounded-2xl bg-lav-soft px-4 py-3">
+            <div className="rounded-2xl bg-teal-soft px-4 py-3">
               <dt className="text-xs font-bold uppercase tracking-wider text-muted">Best for</dt>
               <dd className="mt-1 font-semibold text-teal">{active.forWhom}</dd>
             </div>
@@ -83,7 +83,7 @@ export default function TreatmentExplorer({ initialId }: { initialId?: string })
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/booking?service=${active.id}`}
-              className="rounded-xl bg-lav px-6 py-3 text-center text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
+              className="rounded-xl bg-teal px-6 py-3 text-center text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-teal-deep"
             >
               Book {active.name} →
             </Link>

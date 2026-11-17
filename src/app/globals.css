@@ -5,8 +5,6 @@
 :root {
   --teal: #0b4f5c;
   --teal-deep: #083b45;
-  --peach: #f4a261;
-  --peach-deep: #dd7e3a;
   --scrollbar-thumb: #0b4f5c;
   --scrollbar-track: #e8edef;
 }
@@ -34,8 +32,8 @@ h3 {
 }
 
 ::selection {
-  background: #f4a261;
-  color: #0b4f5c;
+  background: #0b4f5c;
+  color: #ffffff;
 }
 
 /* Scrollbar — legacy fallback only for browsers without scrollbar-color */
@@ -69,7 +67,7 @@ input[type="range"].ba-range::-webkit-slider-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #f4a261;
+  border: 2px solid #0b4f5c;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 input[type="range"].ba-range::-moz-range-thumb {
@@ -77,6 +75,6 @@ input[type="range"].ba-range::-moz-range-thumb {
   height: 44px;
   border-radius: 9999px;
   background: #fff;
-  border: 2px solid #f4a261;
+  border: 2px solid #0b4f5c;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

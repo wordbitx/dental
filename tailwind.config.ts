@@ -1,13 +1,12 @@
 import type { Config } from "tailwindcss";
 
-// SmileCare Sample 01 palette — EXACT match. Deep teal + WHITE + PEACH/ORANGE accent
-// (user's firm instruction: use the orange they used in the sample).
+// THE DENTAL HOME palette — teal monochrome only (v3: the warm accent was
+// removed at the user's request, 17 Nov 2026).
 // DEEP TEAL #0B4F5C (primary / headings / dark bands)
-// WHITE #FFFFFF (page background — the sample's background is white)
-// PEACH/ORANGE: accent word #F4A261, bright #F59E7B, deep #DD7E3A (hover),
-//   soft #FBE3D3 (highlight card), pale #FFF1E6 (pale fills), on-dark #FCD9C0.
-// Buttons that use peach MUST use dark teal text (never white) — the
-// primary CTA stays dark teal with white text.
+// TEAL-DEEP #083B45 (darkest bands, hover states)
+// TEAL-MID #14606E (secondary teal)
+// TEAL-SOFT #D9ECEF (soft fills / highlight panels)
+// WHITE #FFFFFF (page background)
 // (+ WhatsApp brand green, functional only)
 
 const config: Config = {
@@ -25,14 +24,6 @@ const config: Config = {
           mid: "#14606E",
           soft: "#D9ECEF",
         },
-        peach: {
-          DEFAULT: "#F4A261",
-          bright: "#F59E7B",
-          deep: "#DD7E3A",
-          soft: "#FBE3D3",
-          pale: "#FFF1E6",
-          "on-dark": "#FCD9C0",
-        },
         wa: {
           DEFAULT: "#25D366",
           dark: "#1DA851",
@@ -47,7 +38,6 @@ const config: Config = {
       boxShadow: {
         card: "0 10px 40px -12px rgba(11, 79, 92, 0.14)",
         lift: "0 24px 60px -20px rgba(11, 79, 92, 0.28)",
-        peach: "0 10px 30px -10px rgba(244, 162, 97, 0.45)",
       },
     },
   },

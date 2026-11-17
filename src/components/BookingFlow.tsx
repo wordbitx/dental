@@ -125,7 +125,7 @@ export default function BookingFlow() {
                 i < step || (i === 4 && saved)
                   ? "bg-teal text-white"
                   : i === step
-                    ? "bg-lav text-teal"
+                    ? "bg-teal text-white"
                     : "bg-teal-soft text-teal"
               }`}
             >
@@ -159,8 +159,8 @@ export default function BookingFlow() {
                     onClick={() => setServiceId(t.id)}
                     className={`rounded-2xl border p-4 text-left transition-all ${
                       serviceId === t.id
-                        ? "border-lav bg-lav-soft shadow-card"
-                        : "border-teal/15 bg-white hover:border-lav/60"
+                        ? "border-teal bg-teal-soft shadow-card"
+                        : "border-teal/15 bg-white hover:border-teal/60"
                     }`}
                   >
                     <span className="block font-display text-lg font-bold text-teal">{t.name}</span>
@@ -186,11 +186,11 @@ export default function BookingFlow() {
                     onClick={() => setDate(d.iso)}
                     className={`rounded-2xl border p-3 text-center transition-all ${
                       date === d.iso
-                        ? "border-lav bg-lav text-teal shadow-card"
-                        : "border-teal/15 bg-white hover:border-lav/60"
+                        ? "border-teal bg-teal text-white shadow-card"
+                        : "border-teal/15 bg-white hover:border-teal/60"
                     }`}
                   >
-                    <span className={`block text-xs uppercase tracking-wider ${date === d.iso ? "text-teal-deep/70" : "text-muted"}`}>
+                    <span className={`block text-xs uppercase tracking-wider ${date === d.iso ? "text-white/70" : "text-muted"}`}>
                       {d.weekday}
                     </span>
                     <span className="block font-display text-lg font-bold">{d.label}</span>
@@ -214,8 +214,8 @@ export default function BookingFlow() {
                     onClick={() => setTime(slot)}
                     className={`rounded-2xl border px-4 py-4 text-center font-display text-lg font-bold transition-all ${
                       time === slot
-                        ? "border-lav bg-lav text-teal shadow-card"
-                        : "border-teal/15 bg-white text-teal hover:border-lav/60"
+                        ? "border-teal bg-teal text-white shadow-card"
+                        : "border-teal/15 bg-white text-teal hover:border-teal/60"
                     }`}
                   >
                     {slot}
@@ -240,7 +240,7 @@ export default function BookingFlow() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Ahmed Raza"
-                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-lav focus:ring-2 focus:ring-lav/30"
+                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/30"
                   />
                 </label>
                 <label className="block">
@@ -250,7 +250,7 @@ export default function BookingFlow() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. 0300 1234567"
-                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-lav focus:ring-2 focus:ring-lav/30"
+                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/30"
                   />
                 </label>
               </div>
@@ -349,7 +349,7 @@ export default function BookingFlow() {
             <button
               type="button"
               onClick={confirmBooking}
-              className="rounded-xl bg-lav px-7 py-3 text-sm font-bold text-teal shadow-card transition-all hover:-translate-y-0.5 hover:bg-lav-bright"
+              className="rounded-xl bg-teal px-7 py-3 text-sm font-bold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-teal-deep"
             >
               Confirm booking
             </button>

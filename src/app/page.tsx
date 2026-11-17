@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Faq from "@/components/Faq";
+import FindSolution from "@/components/FindSolution";
 import Reveal from "@/components/Reveal";
 import TreatmentIcon from "@/components/TreatmentIcon";
 import { CLINIC, PHOTOS, TREATMENTS, WHATSAPP_BASE } from "@/lib/data";
@@ -86,6 +87,14 @@ function HandIcon({ className }: { className?: string }) {
   );
 }
 
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z" />
+    </svg>
+  );
+}
+
 const WA_BOOK = `${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I want to book an appointment.")}`;
 
 // Six services for the home cards — real treatments from the app.
@@ -99,8 +108,26 @@ const HOME_SERVICES = [
   { id: "pediatric", name: "Pediatric Dentistry", desc: "Gentle first visits for little smiles." },
 ];
 
-// The sample's team row — same 4-circles structure, honest clinic strengths
-// (no invented doctors). Icons only, no invented people.
+// Dentora hero chips — the 6 services shown as pills under the headline.
+// Six, so the mobile 2-column grid has no lone chip on its own row.
+const HERO_CHIPS = [
+  { id: "scaling", label: "Dental Checkup" },
+  { id: "scaling", label: "Teeth Cleaning" },
+  { id: "crowns", label: "Tooth Filling" },
+  { id: "scaling", label: "Gum Treatment" },
+  { id: "braces", label: "Retainers" },
+  { id: "emergency", label: "Emergency Care" },
+];
+
+// Dentora process strip — the 4 steps every visit follows.
+const PROCESS_STEPS = [
+  { n: "01", title: "Smile Assessment", desc: "A careful check-up and X-rays, explained in plain words." },
+  { n: "02", title: "Care Planning", desc: "A plan made for your mouth — and agreed with you first." },
+  { n: "03", title: "Treatment Process", desc: "Unhurried, gentle treatment with modern equipment." },
+  { n: "04", title: "Dental Maintenance", desc: "Regular check-ups that keep small problems small." },
+];
+
+// Honest clinic strengths (no invented people) — the sample's 4-circles row.
 const CARE_CIRCLES = [
   { icon: MonitorIcon, label: "Modern Equipment", sub: "Latest tools" },
   { icon: ShieldIcon, label: "Sterile Environment", sub: "Clean & safe" },
@@ -108,90 +135,45 @@ const CARE_CIRCLES = [
   { icon: HandIcon, label: "Gentle Treatment", sub: "Comfort first" },
 ];
 
+// Odonto-inspired WhatsApp flow — TDH number only.
+const WA_STEPS = [
+  { n: "1", title: "Message us", desc: "Tap the button and tell us what you need." },
+  { n: "2", title: "Pick date & time", desc: "Choose the slot that suits you." },
+  { n: "3", title: "Instant confirmation", desc: "Your appointment is confirmed on WhatsApp." },
+];
+
 export default function HomePage() {
   return (
     <div>
-      {/* ============ HERO — Sample 01: text left, photo right (bleeds to the edge) ============ */}
-      <section className="overflow-hidden bg-white">
-        <div className="mx-auto grid max-w-7xl items-stretch gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:pb-12 lg:pt-10">
+      {/* ============ HERO — Dentora photo-led card.
+          Mobile/tablet: split card — a short, bright, face-focused photo strip
+          on top (nothing over it, so the smile is fully visible) and the text
+          on a solid deep-teal panel below, so the headline is always crisp.
+          Desktop (lg+): the Dentora overlay — headline over the full-bleed
+          photo with a lighter scrim, so the photo stays bright. ============ */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pt-8">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-4 py-1.5 text-[13px] font-semibold text-teal">
-              <ToothIcon className="h-4 w-4 text-teal" />
-              Healthy Smile, Happier You.
-            </span>
-            <h1 className="mt-4 max-w-xl font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.01em] text-teal sm:text-4xl lg:text-[2.5rem]">
-              Advanced Dental Care for a{" "}
-              <span className="text-peach">Healthier Smile</span>
-            </h1>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
-              Modern dental care with gentle treatment and honest, personalized plans — in Saddar
-              Bazar, Cantt, Lahore.
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link
-                href="/booking"
-                className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-teal-deep"
-              >
-                Book Appointment →
-              </Link>
-              <a
-                href={CLINIC.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-teal/25 bg-white px-5 py-3 text-sm font-bold text-teal transition hover:border-teal"
-              >
-                <PhoneIcon className="h-5 w-5" />
-                {CLINIC.phoneDisplay}
-              </a>
-            </div>
-
-            {/* Trust strip — Sample 01 structure, real data only (no divider line, no separators) */}
-            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <span className="flex items-center gap-3">
-                <StarIcon className="h-5 w-5 text-teal" />
-                <span className="leading-tight">
-                  <span className="block text-[13px] font-bold text-teal">{CLINIC.rating} Average</span>
-                  <span className="block text-[11px] font-medium text-muted">Rating</span>
-                </span>
-              </span>
-              <span className="flex items-center gap-3">
-                <UsersIcon className="h-5 w-5 text-teal" />
-                <span className="leading-tight">
-                  <span className="block text-[13px] font-bold text-teal">{CLINIC.reviews} Google</span>
-                  <span className="block text-[11px] font-medium text-muted">Reviews</span>
-                </span>
-              </span>
-              <span className="flex items-center gap-3">
-                <PinIcon className="h-5 w-5 text-teal" />
-                <span className="leading-tight">
-                  <span className="block text-[13px] font-bold text-teal">Saddar Bazar</span>
-                  <span className="block text-[11px] font-medium text-muted">Cantt, Lahore</span>
-                </span>
-              </span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.12} className="relative h-full lg:-mr-[max(0px,calc((100vw_-_80rem)/2_+_2rem))]">
-            <div className="relative h-full">
-              {/* Peach crescent in the gap left of the photo (Sample 01 motif) — a large
-                  circle clipped to a 40px slice, so only a thin arc shows along the
-                  photo's left edge. Hidden below lg (no gap there). */}
-              <div className="absolute -left-10 top-0 hidden h-full w-10 overflow-hidden lg:block" aria-hidden="true">
-                <div className="absolute right-0 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-peach-pale" />
-              </div>
-              <div className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem] shadow-lift lg:min-h-[460px] lg:rounded-l-[2rem] lg:rounded-r-none">
+            <div className="relative overflow-hidden rounded-[1.75rem] shadow-lift sm:rounded-[2rem]">
+              {/* Photo block — flow block on mobile/tablet, full-bleed on desktop */}
+              <div className="relative h-[220px] sm:h-[260px] lg:absolute lg:inset-0 lg:h-auto">
                 <Image
                   src={PHOTOS.hero}
                   alt="A smiling patient in the dental chair, with the dentist beside her"
-                  width={1400}
-                  height={1050}
+                  width={1800}
+                  height={1200}
                   priority
-                  className="h-full w-full object-cover object-[75%_65%]"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="absolute inset-0 h-full w-full object-cover object-[62%_42%] lg:object-[72%_60%]"
+                  sizes="100vw"
                 />
+                {/* Rich teal scrim — desktop only, lighter so the photo stays bright */}
+                <div className="absolute inset-0 hidden bg-gradient-to-r from-teal-deep/80 via-teal-deep/45 to-transparent lg:block" aria-hidden="true" />
               </div>
-              {/* Floating badge — Sample 01 motif, mid-height on the photo's right side */}
-              <div className="absolute right-3 top-[56%] flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lift sm:right-5">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-peach-pale text-teal">
+
+              {/* Floating badge — Sample 01 motif. On mobile it straddles the seam
+                  between photo and teal panel; on desktop it sits top-right. */}
+              <div className="absolute right-4 top-[180px] z-20 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lift sm:right-6 sm:top-[220px] lg:top-6">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-soft text-teal">
                   <ToothIcon className="h-5 w-5" />
                 </span>
                 <span className="text-sm font-bold leading-tight text-teal">
@@ -200,39 +182,165 @@ export default function HomePage() {
                   Our Priority
                 </span>
               </div>
+
+              <div className="relative bg-teal-deep px-5 pb-6 pt-6 sm:px-8 sm:py-8 lg:flex lg:min-h-[540px] lg:flex-col lg:justify-end lg:bg-transparent lg:p-12">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-[13px] font-semibold text-white backdrop-blur-sm">
+                  <ToothIcon className="h-4 w-4 text-white" />
+                  Healthy Smile, Happier You.
+                </span>
+                {/* Headline: the Dentora line as the big line — short, warm, made for a
+                    photo overlay. The Sample 01 line is kept verbatim as the support
+                    paragraph below, so nothing real is lost. */}
+                <h1 className="mt-4 max-w-xl font-display text-[1.9rem] font-bold leading-[1.06] tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.4rem]">
+                  Family-Friendly
+                  <br />
+                  <span className="text-white">Dental Care</span>
+                </h1>
+                <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-white/85 sm:text-base">
+                  Advanced dental care for a healthier smile — modern treatment, gentle hands and
+                  honest plans, in Saddar Bazar, Cantt, Lahore.
+                </p>
+
+                <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+                  <Link
+                    href="/booking"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-teal shadow-card transition hover:bg-white/90 sm:w-auto"
+                  >
+                    Book an Appointment →
+                  </Link>
+                  <a
+                    href={CLINIC.phoneHref}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 sm:w-auto"
+                  >
+                    <PhoneIcon className="h-5 w-5" />
+                    {CLINIC.phoneDisplay}
+                  </a>
+                </div>
+
+                {/* Service chips — tidy 2-column grid on mobile, Dentora row on desktop */}
+                <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-7 sm:flex sm:flex-wrap">
+                  {HERO_CHIPS.map((chip) => (
+                    <Link
+                      key={chip.label}
+                      href={`/treatments?id=${chip.id}`}
+                      className="rounded-full bg-white/90 px-3 py-2 text-center text-[12px] font-semibold text-teal shadow-card transition hover:bg-white sm:px-4 sm:text-[13px]"
+                    >
+                      {chip.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Trust strip below the hero — real data only.
+              Mobile: one compact 3-column row instead of three tall stacked rows. */}
+          <Reveal>
+            <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-teal/10 bg-white px-3 py-3 shadow-card sm:mt-5 sm:flex sm:items-center sm:justify-between sm:gap-x-8 sm:gap-y-3 sm:px-8 sm:py-4">
+              <span className="flex flex-col items-center gap-1 text-center sm:flex-row sm:items-center sm:gap-3 sm:text-left">
+                <StarIcon className="h-4 w-4 text-teal sm:h-5 sm:w-5" />
+                <span className="leading-tight">
+                  <span className="block text-[12px] font-bold text-teal sm:text-sm">{CLINIC.rating} Average Rating</span>
+                  <span className="block text-[10px] font-medium text-muted sm:text-xs">on Google</span>
+                </span>
+              </span>
+              <span className="flex flex-col items-center gap-1 text-center sm:flex-row sm:items-center sm:gap-3 sm:text-left">
+                <UsersIcon className="h-4 w-4 text-teal sm:h-5 sm:w-5" />
+                <span className="leading-tight">
+                  <span className="block text-[12px] font-bold text-teal sm:text-sm">{CLINIC.reviews} Google Reviews</span>
+                  <span className="block text-[10px] font-medium text-muted sm:text-xs">from our patients</span>
+                </span>
+              </span>
+              <span className="flex flex-col items-center gap-1 text-center sm:flex-row sm:items-center sm:gap-3 sm:text-left">
+                <PinIcon className="h-4 w-4 text-teal sm:h-5 sm:w-5" />
+                <span className="leading-tight">
+                  <span className="block text-[12px] font-bold text-teal sm:text-sm">Saddar Bazar, Cantt</span>
+                  <span className="block text-[10px] font-medium text-muted sm:text-xs">Lahore</span>
+                </span>
+              </span>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ============ SERVICES — 6 icon cards (Sample 01) ============ */}
+      {/* ============ PROCESS STRIP — Dentora: Smile Assessment → Dental Maintenance ============ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+          <Reveal>
+            <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              <span className="absolute left-0 right-0 top-5 hidden border-t border-dashed border-teal/25 lg:block" aria-hidden="true" />
+              {PROCESS_STEPS.map((step, i) => (
+                <div key={step.n} className="relative">
+                  <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-teal font-display text-sm font-bold text-white shadow-card">
+                    {step.n}
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-bold leading-snug text-teal">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ FIND YOUR SOLUTION — Odonto-inspired, interactive ============ */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-peach">—</span> Our Services <span className="text-peach">—</span>
+              <span className="text-teal">—</span> Find Your Solution <span className="text-teal">—</span>
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl lg:text-[2.6rem]">
-              Comprehensive Dental <span className="text-peach">Solutions</span>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
+              What&apos;s Bothering <span className="text-teal-deep">Your Smile?</span>
             </h2>
             <p className="mt-3 leading-relaxed text-muted">
-              From routine checkups to advanced treatments, we&apos;ve got you covered.
+              Tap what sounds familiar — we&apos;ll show you what usually causes it and the
+              treatment that answers it.
             </p>
           </Reveal>
+          <Reveal className="mt-10">
+            <FindSolution />
+          </Reveal>
+        </div>
+      </section>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      {/* ============ SERVICES — 6 icon cards, editorial header row ============ */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-xl">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
+                  <span className="text-teal">—</span> Our Services
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
+                  Comprehensive Dental <span className="text-teal-deep">Solutions</span>
+                </h2>
+              </div>
+              <Link href="/treatments" className="text-sm font-bold text-teal underline decoration-teal decoration-2 underline-offset-4 hover:text-teal-deep">
+                View all {TREATMENTS.length} treatments →
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {HOME_SERVICES.map((s, i) => {
               const highlighted = i === 1; // Orthodontics — the Sample 01 highlight card
               return (
                 <Reveal key={s.id} delay={i * 0.05}>
                   <Link
                     href={`/treatments?id=${s.id}`}
-                    className={`group flex h-full flex-col rounded-2xl p-5 transition-all hover:-translate-y-1 ${
+                    className={`group relative flex h-full flex-col rounded-2xl p-6 transition-all hover:-translate-y-1 ${
                       highlighted
-                        ? "bg-peach-soft shadow-peach"
+                        ? "bg-teal-soft shadow-card"
                         : "border border-teal/10 bg-white shadow-card hover:shadow-lift"
                     }`}
                   >
+                    <span className="absolute right-5 top-5 font-display text-sm font-bold text-teal/30">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <span
                       className={`flex h-14 w-14 items-center justify-center rounded-full ${
                         highlighted ? "bg-white/80 text-teal" : "bg-teal text-white"
@@ -258,17 +366,11 @@ export default function HomePage() {
               );
             })}
           </div>
-
-          <Reveal className="mt-8 text-center">
-            <Link href="/treatments" className="text-sm font-bold text-teal underline decoration-peach decoration-2 underline-offset-4 hover:text-peach-deep">
-              View all {TREATMENTS.length} treatments →
-            </Link>
-          </Reveal>
         </div>
       </section>
 
-      {/* ============ ABOUT — photo | text | peach card (Sample 01) ============ */}
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      {/* ============ ABOUT — photo | text | teal-soft card ============ */}
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_1fr_0.62fr] lg:gap-10">
           <Reveal>
             <div className="relative">
@@ -295,11 +397,11 @@ export default function HomePage() {
 
           <Reveal delay={0.08}>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-peach">—</span> About THE DENTAL HOME
+              <span className="text-teal">—</span> About THE DENTAL HOME
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
               Your Trusted Dental Clinic for a{" "}
-              <span className="text-peach">Perfect Smile</span>
+              <span className="text-teal-deep">Perfect Smile</span>
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
               We combine modern technology with careful, compassionate care — so you leave with a
@@ -321,7 +423,7 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <div className="flex flex-col items-center rounded-[2rem] bg-peach-soft p-8 text-center shadow-card sm:p-10">
+            <div className="flex flex-col items-center rounded-[2rem] bg-teal-soft p-8 text-center shadow-card sm:p-10">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-teal shadow-card">
                 <ToothIcon className="h-10 w-10" />
               </span>
@@ -341,51 +443,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ CARE CIRCLES — the sample's 4-circles team row, honest strengths ============ */}
+      {/* ============ WHY CHOOSE US — deep-teal rich band, 4 honest strengths ============ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.5fr] lg:gap-14">
-            <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-                <span className="text-peach">—</span> Why Choose Us
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
-                Care That Puts{" "}
-                <span className="text-peach">You First</span>
-              </h2>
-              <p className="mt-3 leading-relaxed text-muted">
-                The things that make a visit here different — the same care, every time.
-              </p>
-            </Reveal>
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-              {CARE_CIRCLES.map((c, i) => {
-                const Icon = c.icon;
-                return (
-                  <Reveal key={c.label} delay={i * 0.06}>
-                    <div className="flex flex-col items-center text-center">
-                      <span
-                        className={`flex h-24 w-24 items-center justify-center rounded-full sm:h-28 sm:w-28 ${
-                          i % 2 === 0 ? "bg-peach-pale text-teal" : "bg-teal-soft text-teal"
-                        }`}
-                      >
-                        <Icon className="h-11 w-11 sm:h-12 sm:w-12" />
-                      </span>
-                      <p className="mt-4 font-display text-base font-bold leading-snug text-teal sm:text-lg">
-                        {c.label}
-                      </p>
-                      <p className="mt-1 text-sm text-muted">{c.sub}</p>
-                    </div>
-                  </Reveal>
-                );
-              })}
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <Reveal>
+            <div className="overflow-hidden rounded-[2rem] bg-teal-deep px-7 py-10 text-white shadow-lift sm:px-10 lg:px-12">
+              <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.5fr] lg:gap-14">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-white">
+                    — Why Choose Us
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] sm:text-4xl">
+                    Care That Puts <span className="text-white">You First</span>
+                  </h2>
+                  <p className="mt-3 leading-relaxed text-white/75">
+                    The things that make a visit here different — the same care, every time.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                  {CARE_CIRCLES.map((c) => {
+                    const Icon = c.icon;
+                    return (
+                      <div key={c.label} className="flex flex-col items-center text-center">
+                        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-white sm:h-24 sm:w-24">
+                          <Icon className="h-9 w-9 sm:h-10 sm:w-10" />
+                        </span>
+                        <p className="mt-4 font-display text-sm font-bold leading-snug sm:text-base">
+                          {c.label}
+                        </p>
+                        <p className="mt-1 text-xs text-white/65 sm:text-sm">{c.sub}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ============ REVIEWS BAND — the sample's testimonial band, real Google aggregate ============ */}
+      {/* ============ REVIEWS BAND — real Google aggregate only ============ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
           <Reveal>
             <div className="relative flex flex-col items-center justify-between gap-8 overflow-hidden rounded-[2rem] bg-teal px-7 py-10 text-white shadow-lift sm:px-10 md:flex-row lg:px-12">
               <span className="pointer-events-none absolute -left-2 top-2 font-display text-[10rem] font-bold leading-none text-white/10" aria-hidden="true">
@@ -425,15 +524,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ SMILE GALLERY — before/after slider ============ */}
+      {/* ============ BOOK IN 60 SECONDS — Odonto-inspired WhatsApp flow ============ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-peach">—</span> Our Smile Gallery <span className="text-peach">—</span>
+              <span className="text-teal">—</span> Easy Booking <span className="text-teal">—</span>
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
-              Real Results, <span className="text-peach">Beautiful Smiles</span>
+              Book in <span className="text-teal-deep">60 Seconds</span> via WhatsApp
+            </h2>
+            <p className="mt-3 leading-relaxed text-muted">
+              No calls, no waiting on hold — three quick steps and your visit is booked.
+            </p>
+          </Reveal>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {WA_STEPS.map((step) => (
+              <Reveal key={step.n}>
+                <div className="flex h-full flex-col items-center rounded-2xl border border-teal/10 bg-white p-6 text-center shadow-card">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal font-display text-lg font-bold text-white">
+                    {step.n}
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-bold text-teal">{step.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-8 text-center">
+            <a
+              href={WA_BOOK}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-wa px-7 py-3.5 text-sm font-bold text-white shadow-card transition hover:bg-wa-dark"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              Message us on WhatsApp
+            </a>
+            <p className="mt-3 text-sm text-muted">
+              Prefer the form?{" "}
+              <Link href="/booking" className="font-bold text-teal underline decoration-teal decoration-2 underline-offset-4 hover:text-teal-deep">
+                Book online instead →
+              </Link>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ SMILE GALLERY — before/after slider ============ */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
+              <span className="text-teal">—</span> Our Smile Gallery <span className="text-teal">—</span>
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-[-0.01em] text-teal sm:text-4xl">
+              Real Results, <span className="text-teal-deep">Beautiful Smiles</span>
             </h2>
             <p className="mt-3 leading-relaxed text-muted">
               Drag the slider to see what careful dentistry can do.
@@ -445,8 +591,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ CTA BAND — dark teal + peach button (dark text) ============ */}
-      <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-20">
+      {/* ============ CTA BAND — dark teal + white button ============ */}
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-teal-deep px-7 py-10 text-white shadow-lift sm:px-10 lg:px-12">
             <ToothIcon className="pointer-events-none absolute -right-6 -top-8 h-48 w-48 text-white/[0.06]" />
@@ -466,7 +612,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/booking"
-                className="shrink-0 rounded-full bg-peach px-7 py-4 text-base font-bold text-teal shadow-peach transition hover:bg-peach-bright"
+                className="shrink-0 rounded-full bg-white px-7 py-4 text-base font-bold text-teal shadow-card transition hover:bg-white/90"
               >
                 Book Appointment →
               </Link>
@@ -475,12 +621,12 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* ============ FAQ ============ */}
+      {/* ============ FAQ — extended with generic Q&As (no prices, no other clinic's claims) ============ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-teal">
-              <span className="text-peach">—</span> Questions <span className="text-peach">—</span>
+              <span className="text-teal">—</span> Questions <span className="text-teal">—</span>
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-[-0.01em] text-teal sm:text-4xl">
               Before You Visit
@@ -497,7 +643,7 @@ export default function HomePage() {
                 href={WA_BOOK}
                 target="_blank"
                 rel="noreferrer"
-                className="font-bold text-teal underline decoration-peach decoration-2 underline-offset-4 hover:text-peach-deep"
+                className="font-bold text-teal underline decoration-teal decoration-2 underline-offset-4 hover:text-teal-deep"
               >
                 message us to confirm
               </a>
