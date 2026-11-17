@@ -113,83 +113,84 @@ export default function HomePage() {
     <div>
       {/* ============ HERO — Sample 01: text left, photo right (bleeds to the edge) ============ */}
       <section className="overflow-hidden bg-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:pb-16 lg:pt-14">
+        <div className="mx-auto grid max-w-7xl items-stretch gap-8 px-4 pb-12 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:pb-12 lg:pt-10">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-teal shadow-card">
+            <span className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-4 py-1.5 text-[13px] font-semibold text-teal">
               <ToothIcon className="h-4 w-4 text-teal" />
               Healthy Smile, Happier You.
             </span>
-            <h1 className="mt-6 max-w-xl font-display text-[2.6rem] font-bold leading-[1.06] tracking-[-0.01em] text-teal sm:text-6xl lg:text-[3.6rem]">
+            <h1 className="mt-4 max-w-xl font-display text-[2rem] font-bold leading-[1.08] tracking-[-0.01em] text-teal sm:text-4xl lg:text-[2.5rem]">
               Advanced Dental Care for a{" "}
               <span className="text-peach">Healthier Smile</span>
             </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">
-              Modern dental care with gentle treatment and honest, personalized plans — right here
-              in Saddar Bazar, Cantt, Lahore.
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
+              Modern dental care with gentle treatment and honest, personalized plans — in Saddar
+              Bazar, Cantt, Lahore.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href="/booking"
-                className="inline-flex items-center gap-2 rounded-full bg-teal px-7 py-3.5 text-base font-bold text-white shadow-card transition hover:bg-teal-deep"
+                className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-bold text-white shadow-card transition hover:bg-teal-deep"
               >
                 Book Appointment →
               </Link>
               <a
                 href={CLINIC.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-teal/25 bg-white px-6 py-3 text-base font-bold text-teal transition hover:border-teal"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-teal/25 bg-white px-5 py-3 text-sm font-bold text-teal transition hover:border-teal"
               >
                 <PhoneIcon className="h-5 w-5" />
                 {CLINIC.phoneDisplay}
               </a>
             </div>
 
-            {/* Trust strip — Sample 01 structure, real data only */}
-            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-teal/10 pt-6">
+            {/* Trust strip — Sample 01 structure, real data only (no divider line, no separators) */}
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
               <span className="flex items-center gap-3">
-                <StarIcon className="h-6 w-6 text-teal" />
+                <StarIcon className="h-5 w-5 text-teal" />
                 <span className="leading-tight">
-                  <span className="block text-sm font-bold text-teal">{CLINIC.rating} Average</span>
-                  <span className="block text-xs font-medium text-muted">Rating</span>
+                  <span className="block text-[13px] font-bold text-teal">{CLINIC.rating} Average</span>
+                  <span className="block text-[11px] font-medium text-muted">Rating</span>
                 </span>
               </span>
-              <span className="hidden h-10 w-px bg-teal/15 sm:block" aria-hidden="true" />
               <span className="flex items-center gap-3">
-                <UsersIcon className="h-6 w-6 text-teal" />
+                <UsersIcon className="h-5 w-5 text-teal" />
                 <span className="leading-tight">
-                  <span className="block text-sm font-bold text-teal">{CLINIC.reviews} Google</span>
-                  <span className="block text-xs font-medium text-muted">Reviews</span>
+                  <span className="block text-[13px] font-bold text-teal">{CLINIC.reviews} Google</span>
+                  <span className="block text-[11px] font-medium text-muted">Reviews</span>
                 </span>
               </span>
-              <span className="hidden h-10 w-px bg-teal/15 sm:block" aria-hidden="true" />
               <span className="flex items-center gap-3">
-                <PinIcon className="h-6 w-6 text-teal" />
+                <PinIcon className="h-5 w-5 text-teal" />
                 <span className="leading-tight">
-                  <span className="block text-sm font-bold text-teal">Saddar Bazar</span>
-                  <span className="block text-xs font-medium text-muted">Cantt, Lahore</span>
+                  <span className="block text-[13px] font-bold text-teal">Saddar Bazar</span>
+                  <span className="block text-[11px] font-medium text-muted">Cantt, Lahore</span>
                 </span>
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.12} className="relative lg:-mr-[max(0px,calc((100vw-80rem)/2))]">
-            <div className="relative">
-              {/* Soft peach arc behind the photo (Sample 01 motif) */}
-              <div className="absolute -left-6 -top-8 h-48 w-48 rounded-full bg-peach-pale sm:h-60 sm:w-60" aria-hidden="true" />
-              <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-peach-soft" aria-hidden="true" />
-              <div className="relative overflow-hidden rounded-[2rem] shadow-lift lg:rounded-l-[2rem] lg:rounded-r-none">
+          <Reveal delay={0.12} className="relative h-full lg:-mr-[max(0px,calc((100vw_-_80rem)/2_+_2rem))]">
+            <div className="relative h-full">
+              {/* Peach crescent in the gap left of the photo (Sample 01 motif) — a large
+                  circle clipped to a 40px slice, so only a thin arc shows along the
+                  photo's left edge. Hidden below lg (no gap there). */}
+              <div className="absolute -left-10 top-0 hidden h-full w-10 overflow-hidden lg:block" aria-hidden="true">
+                <div className="absolute right-0 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-peach-pale" />
+              </div>
+              <div className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem] shadow-lift lg:min-h-[460px] lg:rounded-l-[2rem] lg:rounded-r-none">
                 <Image
                   src={PHOTOS.hero}
                   alt="A smiling patient in the dental chair, with the dentist beside her"
                   width={1400}
                   height={1050}
                   priority
-                  className="aspect-[4/3] w-full object-cover"
+                  className="h-full w-full object-cover object-[75%_65%]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              {/* Floating badge — Sample 01 motif, bottom-right of the photo */}
-              <div className="absolute -bottom-5 right-5 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lift sm:right-8">
+              {/* Floating badge — Sample 01 motif, mid-height on the photo's right side */}
+              <div className="absolute right-3 top-[56%] flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-lift sm:right-5">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-peach-pale text-teal">
                   <ToothIcon className="h-5 w-5" />
                 </span>
