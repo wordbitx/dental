@@ -8,7 +8,7 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-teal/10 rounded-2xl border border-teal/10 bg-white shadow-card">
+    <div className="divide-y divide-navy/10 rounded-2xl border border-navy/10 bg-white shadow-card">
       {FAQS.map((item, i) => {
         const isOpen = open === i;
         return (
@@ -19,10 +19,10 @@ export default function Faq() {
               className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-7"
               aria-expanded={isOpen}
             >
-              <span className="font-display text-lg font-extrabold text-teal">{item.q}</span>
+              <span className="font-display text-lg font-extrabold text-navy">{item.q}</span>
               <span
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all ${
-                  isOpen ? "rotate-45 border-gold bg-gold text-teal-deep" : "border-teal/25 text-teal"
+                  isOpen ? "rotate-45 border-amber bg-amber text-navy-deep" : "border-navy/25 text-navy"
                 }`}
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
@@ -49,3 +49,4 @@ export default function Faq() {
     </div>
   );
 }
+

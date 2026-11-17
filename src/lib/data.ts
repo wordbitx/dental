@@ -24,12 +24,14 @@ export type Treatment = {
   description: string;
   duration: string;
   forWhom: string;
+  image: string;
   points: string[];
 };
 
 export const TREATMENTS: Treatment[] = [
   {
     id: "scaling",
+    image: "https://images.pexels.com/photos/4269694/pexels-photo-4269694.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Teeth Scaling & Polishing",
     short: "A cleaner, brighter smile in one visit.",
     description:
@@ -44,6 +46,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "root-canal",
+    image: "https://images.pexels.com/photos/6812547/pexels-photo-6812547.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Root Canal Treatment",
     short: "Save the tooth, end the pain.",
     description:
@@ -58,6 +61,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "implants",
+    image: "https://images.pexels.com/photos/4687346/pexels-photo-4687346.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Dental Implants",
     short: "A permanent answer to a missing tooth.",
     description:
@@ -72,6 +76,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "braces",
+    image: "https://images.pexels.com/photos/28407748/pexels-photo-28407748.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Braces & Orthodontics",
     short: "Straight teeth, at any age.",
     description:
@@ -86,6 +91,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "whitening",
+    image: "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Teeth Whitening",
     short: "A noticeably brighter smile.",
     description:
@@ -100,6 +106,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "crowns",
+    image: "https://images.pexels.com/photos/6812480/pexels-photo-6812480.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Crowns & Bridges",
     short: "Restore strength and shape.",
     description:
@@ -114,6 +121,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "pediatric",
+    image: "https://images.pexels.com/photos/6502546/pexels-photo-6502546.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Pediatric Dentistry",
     short: "Gentle first visits for little smiles.",
     description:
@@ -128,6 +136,7 @@ export const TREATMENTS: Treatment[] = [
   },
   {
     id: "emergency",
+    image: "https://images.pexels.com/photos/305564/pexels-photo-305564.jpeg?auto=compress&cs=tinysrgb&w=1200",
     name: "Emergency Dental Care",
     short: "When it hurts, come straight in.",
     description:
@@ -143,16 +152,19 @@ export const TREATMENTS: Treatment[] = [
 ];
 
 export const PHOTOS = {
-  hero: "https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  heroAlt: "https://images.pexels.com/photos/3845554/pexels-photo-3845554.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  clinic1: "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  clinic2: "https://images.pexels.com/photos/6627562/pexels-photo-6627562.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  clinic3: "https://images.pexels.com/photos/3845626/pexels-photo-3845626.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  clinic4: "https://images.pexels.com/photos/3845556/pexels-photo-3845556.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  clinic5: "https://images.pexels.com/photos/6812547/pexels-photo-6812547.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  clinic6: "https://images.pexels.com/photos/3845628/pexels-photo-3845628.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  before: "https://images.pexels.com/photos/3845680/pexels-photo-3845680.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  after: "https://images.pexels.com/photos/3845743/pexels-photo-3845743.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  // Hero: modern clinic interior, dental chair, no people (verified).
+  hero: "https://images.pexels.com/photos/4269277/pexels-photo-4269277.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  // Full clinic room, no people.
+  heroAlt: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  clinic1: "https://images.pexels.com/photos/6812453/pexels-photo-6812453.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  clinic2: "https://images.pexels.com/photos/6809634/pexels-photo-6809634.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  clinic3: "https://images.pexels.com/photos/6812480/pexels-photo-6812480.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  clinic4: "https://images.pexels.com/photos/9062525/pexels-photo-9062525.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  clinic5: "https://images.pexels.com/photos/69686/pexels-photo-69686.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  clinic6: "https://images.pexels.com/photos/4687346/pexels-photo-4687346.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  // Before/after: mouth-focused close-ups only, no faces.
+  before: "https://images.pexels.com/photos/4269694/pexels-photo-4269694.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  after: "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
 
 export const FAQS = [

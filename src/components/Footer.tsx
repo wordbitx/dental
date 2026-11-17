@@ -3,7 +3,7 @@ import { CLINIC, WHATSAPP_BASE } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="border-t-4 border-gold bg-teal-deep text-white">
+    <footer className="border-t-4 border-amber bg-navy-deep text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <p className="font-display text-xl font-black tracking-wide">THE DENTAL HOME</p>
@@ -16,7 +16,7 @@ export default function Footer() {
               href={CLINIC.googleReviewsUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-extrabold text-gold-bright underline decoration-gold/60 underline-offset-4 hover:text-white"
+              className="font-extrabold text-amber-bright underline decoration-amber/60 underline-offset-4 hover:text-white"
             >
               ★ {CLINIC.rating} from {CLINIC.reviews} Google reviews
             </a>
@@ -24,28 +24,28 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-bright">Visit</p>
+          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-amber-bright">Visit</p>
           <p className="mt-3 text-sm leading-relaxed text-white/80">{CLINIC.address}</p>
           <a
             href={CLINIC.mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-3 inline-block text-sm font-extrabold text-gold-bright underline decoration-gold/60 underline-offset-4 hover:text-white"
+            className="mt-3 inline-block text-sm font-extrabold text-amber-bright underline decoration-amber/60 underline-offset-4 hover:text-white"
           >
             Get directions →
           </a>
         </div>
 
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-bright">Contact</p>
-          <a href={CLINIC.phoneHref} className="mt-3 block text-sm font-extrabold text-white hover:text-gold-bright">
+          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-amber-bright">Contact</p>
+          <a href={CLINIC.phoneHref} className="mt-3 block text-sm font-extrabold text-white hover:text-amber-bright">
             {CLINIC.phoneDisplay}
           </a>
           <a
             href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hello THE DENTAL HOME, I have a question.")}`}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 block text-sm font-bold text-gold-bright hover:text-white"
+            className="mt-2 block text-sm font-bold text-amber-bright hover:text-white"
           >
             WhatsApp us →
           </a>
@@ -55,14 +55,14 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-bright">Explore</p>
+          <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-amber-bright">Explore</p>
           <ul className="mt-3 space-y-2 text-sm font-semibold">
-            <li><Link href="/" className="text-white/80 hover:text-gold-bright">Home</Link></li>
-            <li><Link href="/treatments" className="text-white/80 hover:text-gold-bright">Treatments</Link></li>
-            <li><Link href="/about" className="text-white/80 hover:text-gold-bright">About</Link></li>
-            <li><Link href="/booking" className="text-white/80 hover:text-gold-bright">Book a visit</Link></li>
-            <li><Link href="/contact" className="text-white/80 hover:text-gold-bright">Contact</Link></li>
-            <li><Link href="/admin" className="text-white/60 hover:text-gold-bright">Admin dashboard</Link></li>
+            <li><Link href="/" className="text-white/80 hover:text-amber-bright">Home</Link></li>
+            <li><Link href="/treatments" className="text-white/80 hover:text-amber-bright">Treatments</Link></li>
+            <li><Link href="/about" className="text-white/80 hover:text-amber-bright">About</Link></li>
+            <li><Link href="/booking" className="text-white/80 hover:text-amber-bright">Book a visit</Link></li>
+            <li><Link href="/contact" className="text-white/80 hover:text-amber-bright">Contact</Link></li>
+            <li><Link href="/admin" className="text-white/60 hover:text-amber-bright">Admin dashboard</Link></li>
           </ul>
         </div>
       </div>

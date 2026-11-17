@@ -123,18 +123,18 @@ export default function BookingFlow() {
             <span
               className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${
                 i < step || (i === 4 && saved)
-                  ? "bg-teal text-white"
+                  ? "bg-navy text-white"
                   : i === step
-                    ? "bg-gold text-teal-deep"
-                    : "bg-teal-soft text-teal"
+                    ? "bg-amber text-navy-deep"
+                    : "bg-navy-soft text-navy"
               }`}
             >
               {i < step || (i === 4 && saved) ? "✓" : i + 1}
             </span>
-            <span className={`text-sm font-medium ${i === step ? "text-teal" : "text-muted"}`}>
+            <span className={`text-sm font-medium ${i === step ? "text-navy" : "text-muted"}`}>
               {label}
             </span>
-            {i < STEPS.length - 1 && <span className="mx-1 h-px w-4 bg-teal/20 sm:w-8" />}
+            {i < STEPS.length - 1 && <span className="mx-1 h-px w-4 bg-navy/20 sm:w-8" />}
           </li>
         ))}
       </ol>
@@ -149,7 +149,7 @@ export default function BookingFlow() {
         >
           {step === 0 && (
             <div>
-              <h2 className="font-display text-2xl font-extrabold text-teal">What do you need?</h2>
+              <h2 className="font-display text-2xl font-extrabold text-navy">What do you need?</h2>
               <p className="mt-1 text-muted">Choose a treatment — you can change it later on WhatsApp.</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {TREATMENTS.map((t) => (
@@ -159,13 +159,13 @@ export default function BookingFlow() {
                     onClick={() => setServiceId(t.id)}
                     className={`rounded-2xl border p-4 text-left transition-all ${
                       serviceId === t.id
-                        ? "border-gold bg-gold-soft shadow-card"
-                        : "border-teal/15 bg-white hover:border-gold/60"
+                        ? "border-amber bg-amber-soft shadow-card"
+                        : "border-navy/15 bg-white hover:border-amber/60"
                     }`}
                   >
-                    <span className="block font-display text-lg font-extrabold text-teal">{t.name}</span>
+                    <span className="block font-display text-lg font-extrabold text-navy">{t.name}</span>
                     <span className="mt-1 block text-sm text-muted">{t.short}</span>
-                    <span className="mt-2 block text-xs font-medium uppercase tracking-wider text-gold-deep">
+                    <span className="mt-2 block text-xs font-medium uppercase tracking-wider text-amber-deep">
                       {t.duration}
                     </span>
                   </button>
@@ -176,7 +176,7 @@ export default function BookingFlow() {
 
           {step === 1 && (
             <div>
-              <h2 className="font-display text-2xl font-extrabold text-teal">Pick a day</h2>
+              <h2 className="font-display text-2xl font-extrabold text-navy">Pick a day</h2>
               <p className="mt-1 text-muted">Choose any day in the next two weeks.</p>
               <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
                 {days.map((d) => (
@@ -186,11 +186,11 @@ export default function BookingFlow() {
                     onClick={() => setDate(d.iso)}
                     className={`rounded-2xl border p-3 text-center transition-all ${
                       date === d.iso
-                        ? "border-gold bg-gold text-teal-deep shadow-card"
-                        : "border-teal/15 bg-white hover:border-gold/60"
+                        ? "border-amber bg-amber text-navy-deep shadow-card"
+                        : "border-navy/15 bg-white hover:border-amber/60"
                     }`}
                   >
-                    <span className={`block text-xs uppercase tracking-wider ${date === d.iso ? "text-teal-deep/70" : "text-muted"}`}>
+                    <span className={`block text-xs uppercase tracking-wider ${date === d.iso ? "text-navy-deep/70" : "text-muted"}`}>
                       {d.weekday}
                     </span>
                     <span className="block font-display text-lg font-extrabold">{d.label}</span>
@@ -202,7 +202,7 @@ export default function BookingFlow() {
 
           {step === 2 && (
             <div>
-              <h2 className="font-display text-2xl font-extrabold text-teal">Preferred time</h2>
+              <h2 className="font-display text-2xl font-extrabold text-navy">Preferred time</h2>
               <p className="mt-1 text-muted">
                 Pick the time that suits you best. The clinic confirms your exact slot on WhatsApp.
               </p>
@@ -214,15 +214,15 @@ export default function BookingFlow() {
                     onClick={() => setTime(slot)}
                     className={`rounded-2xl border px-4 py-4 text-center font-display text-lg font-extrabold transition-all ${
                       time === slot
-                        ? "border-gold bg-gold text-teal-deep shadow-card"
-                        : "border-teal/15 bg-white text-teal hover:border-gold/60"
+                        ? "border-amber bg-amber text-navy-deep shadow-card"
+                        : "border-navy/15 bg-white text-navy hover:border-amber/60"
                     }`}
                   >
                     {slot}
                   </button>
                 ))}
               </div>
-              <p className="mt-4 rounded-xl bg-teal-soft px-4 py-3 text-sm text-teal">
+              <p className="mt-4 rounded-xl bg-navy-soft px-4 py-3 text-sm text-navy">
                 Timings are confirmed by the clinic on WhatsApp — message us to confirm.
               </p>
             </div>
@@ -230,33 +230,33 @@ export default function BookingFlow() {
 
           {step === 3 && (
             <div>
-              <h2 className="font-display text-2xl font-extrabold text-teal">Your details</h2>
+              <h2 className="font-display text-2xl font-extrabold text-navy">Your details</h2>
               <p className="mt-1 text-muted">So we know who is coming, and where to confirm.</p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <label className="block">
-                  <span className="mb-1 block text-sm font-semibold text-teal">Full name</span>
+                  <span className="mb-1 block text-sm font-semibold text-navy">Full name</span>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Ahmed Raza"
-                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                    className="w-full rounded-xl border border-navy/20 bg-white px-4 py-3 outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/30"
                   />
                 </label>
                 <label className="block">
-                  <span className="mb-1 block text-sm font-semibold text-teal">Phone / WhatsApp</span>
+                  <span className="mb-1 block text-sm font-semibold text-navy">Phone / WhatsApp</span>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. 0300 1234567"
-                    className="w-full rounded-xl border border-teal/20 bg-white px-4 py-3 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30"
+                    className="w-full rounded-xl border border-navy/20 bg-white px-4 py-3 outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/30"
                   />
                 </label>
               </div>
-              <div className="mt-6 rounded-2xl border border-teal/15 bg-white p-5">
+              <div className="mt-6 rounded-2xl border border-navy/15 bg-white p-5">
                 <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-muted">Your visit</p>
-                <p className="mt-2 font-display text-xl font-extrabold text-teal">{service?.name}</p>
+                <p className="mt-2 font-display text-xl font-extrabold text-navy">{service?.name}</p>
                 <p className="mt-1 text-muted">
                   {dateLabel ? `${dateLabel.weekday}, ${dateLabel.label}` : date} · {time}
                 </p>
@@ -266,25 +266,25 @@ export default function BookingFlow() {
 
           {step === 4 && saved && (
             <div className="text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal text-white">
+              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-navy text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-8 w-8">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <h2 className="mt-5 font-display text-3xl font-extrabold text-teal">Request received</h2>
+              <h2 className="mt-5 font-display text-3xl font-extrabold text-navy">Request received</h2>
               <p className="mx-auto mt-2 max-w-md text-muted">
                 Thank you, {saved.name}. Your request is saved as <strong>Pending</strong>. Send it on
                 WhatsApp so the clinic can confirm your slot.
               </p>
-              <div className="mx-auto mt-6 max-w-md rounded-2xl border border-teal/15 bg-white p-5 text-left">
+              <div className="mx-auto mt-6 max-w-md rounded-2xl border border-navy/15 bg-white p-5 text-left">
                 <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-muted">Booking summary</p>
                 <dl className="mt-3 space-y-2 text-sm">
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Treatment</dt><dd className="font-semibold text-teal">{saved.service}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Date</dt><dd className="font-semibold text-teal">{saved.date}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Preferred time</dt><dd className="font-semibold text-teal">{saved.time}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Name</dt><dd className="font-semibold text-teal">{saved.name}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Phone</dt><dd className="font-semibold text-teal">{saved.phone}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted">Status</dt><dd className="font-semibold text-gold-deep">Pending confirmation</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Treatment</dt><dd className="font-semibold text-navy">{saved.service}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Date</dt><dd className="font-semibold text-navy">{saved.date}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Preferred time</dt><dd className="font-semibold text-navy">{saved.time}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Name</dt><dd className="font-semibold text-navy">{saved.name}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Phone</dt><dd className="font-semibold text-navy">{saved.phone}</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted">Status</dt><dd className="font-semibold text-amber-deep">Pending confirmation</dd></div>
                 </dl>
               </div>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -292,11 +292,11 @@ export default function BookingFlow() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-xl bg-gold px-7 py-3.5 text-sm font-extrabold text-teal-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-gold-bright"
+                  className="rounded-xl bg-amber px-7 py-3.5 text-sm font-extrabold text-navy-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-amber-bright"
                 >
                   Send booking on WhatsApp →
                 </a>
-                <Link href="/admin" className="rounded-xl border-2 border-teal/25 px-7 py-3.5 text-sm font-semibold text-teal hover:border-teal">
+                <Link href="/admin" className="rounded-xl border-2 border-navy/25 px-7 py-3.5 text-sm font-semibold text-navy hover:border-navy">
                   View in Admin →
                 </Link>
               </div>
@@ -311,7 +311,7 @@ export default function BookingFlow() {
                   setName("");
                   setPhone("");
                 }}
-                className="mt-4 text-sm font-medium text-muted underline underline-offset-4 hover:text-teal"
+                className="mt-4 text-sm font-medium text-muted underline underline-offset-4 hover:text-navy"
               >
                 Book another visit
               </button>
@@ -333,7 +333,7 @@ export default function BookingFlow() {
               setStep((s) => Math.max(s - 1, 0));
             }}
             disabled={step === 0}
-            className="rounded-xl border-2 border-teal/25 px-5 py-2.5 text-sm font-semibold text-teal disabled:opacity-40"
+            className="rounded-xl border-2 border-navy/25 px-5 py-2.5 text-sm font-semibold text-navy disabled:opacity-40"
           >
             ← Back
           </button>
@@ -341,7 +341,7 @@ export default function BookingFlow() {
             <button
               type="button"
               onClick={next}
-              className="rounded-xl bg-teal px-7 py-3 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-teal-deep"
+              className="rounded-xl bg-navy px-7 py-3 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-navy-deep"
             >
               Continue →
             </button>
@@ -349,7 +349,7 @@ export default function BookingFlow() {
             <button
               type="button"
               onClick={confirmBooking}
-              className="rounded-xl bg-gold px-7 py-3 text-sm font-extrabold text-teal-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-gold-bright"
+              className="rounded-xl bg-amber px-7 py-3 text-sm font-extrabold text-navy-deep shadow-card transition-all hover:-translate-y-0.5 hover:bg-amber-bright"
             >
               Confirm booking
             </button>

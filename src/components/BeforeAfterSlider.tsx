@@ -34,7 +34,7 @@ export default function BeforeAfterSlider() {
         <span className="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
           Before
         </span>
-        <span className="absolute right-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-teal-deep">
+        <span className="absolute right-4 top-4 rounded-full bg-amber px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-navy-deep">
           After
         </span>
 
@@ -42,7 +42,7 @@ export default function BeforeAfterSlider() {
           className="absolute inset-y-0 w-0.5 bg-white shadow"
           style={{ left: `${pos}%` }}
         >
-          <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold bg-white text-gold-deep shadow-lift">
+          <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-amber bg-white text-amber-deep shadow-lift">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 7l-4 5 4 5M16 7l4 5-4 5" />
             </svg>
